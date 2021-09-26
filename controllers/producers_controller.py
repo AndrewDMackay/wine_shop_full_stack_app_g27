@@ -10,33 +10,33 @@ from repositories import wine_repository
 from models.wine import Wine
 from models.producer import Producer
 
-wines_blueprint = Blueprint("wines", __name__)
+producers_blueprint = Blueprint("producers", __name__)
 
 
 # Index..
-# GET '/wines/', finalised..
+# GET '/producers/', finalised..
 
-@wines_blueprint.route("/wines", strict_slashes=False, methods=['GET'])
-def wines():
-    wines = wine_repository.select_all()
-    return render_template("wines/index.html", all_wines = wines)
+@producers_blueprint.route("/producers", strict_slashes=False, methods=['GET'])
+def producers():
+    producers = producer_repository.select_all()
+    return render_template('producers/index.html', all_producers = producers)
 
 
 # NEW
-# GET '/wines/new'
+# GET '/producers/new'
 # Returns an HTML form to the browser, finalised..
 
-@wines_blueprint.route("/wines/new", strict_slashes=False, methods=['GET'])
+@producers_blueprint.route("/producers/new", strict_slashes=False, methods=['GET'])
 def new_wines():
     producers = producer_repository.select_all()
-    return render_template("wines/new.html", all_producers = producers)
+    return render_template('producers/new.html', all_producers = producers)
 
 
 # CREATE
-# POST '/wines/'
+# POST '/producers/'
 # Receives the data from the form to insert into the database, finalised..
 
-@wines_blueprint.route("/wines", strict_slashes=False, methods=['POST'])
+@producers_blueprint.route("/producers", strict_slashes=False, methods=['POST'])
 def create_wine():
     wine_name = request.form['wine-name']
     producer_id = request.form['producer_id']
@@ -46,32 +46,32 @@ def create_wine():
     sell_price = request.form['sell-price']
     wine = Wine(wine_name, producer, stock, net_price, sell_price)
     wine_repository.save(wine)
-    return redirect('/wines')
+    return redirect('/producers')
 
 
 # # SHOW
-# # GET '/wines/<id>', finalised..
+# # GET '/producers/<id>', finalised..
 
-@wines_blueprint.route("/wines/<id>", strict_slashes=False, methods=['GET'])
+@producers_blueprint.route("/producers/<id>", strict_slashes=False, methods=['GET'])
 def show_wine(id):
     wine = wine_repository.select(id)
-    return render_template('wines/show.html', wine = wine)
+    return render_template('producers/show.html', wine = wine)
 
 
 # EDIT
-# GET '/wines/<id>/edit', finalised..
+# GET '/producers/<id>/edit', finalised..
 
-@wines_blueprint.route("/wines/<id>/edit", strict_slashes=False, methods=['GET'])
+@producers_blueprint.route("/producers/<id>/edit", strict_slashes=False, methods=['GET'])
 def edit_wine(id):
     wine = wine_repository.select(id)
     producers = producer_repository.select_all()
-    return render_template('wines/edit.html', wine = wine, all_producers = producers)
+    return render_template('producers/edit.html', wine = wine, all_producers = producers)
 
 
 # UPDATE
-# PUT '/wines/<id>'
+# PUT '/producers/<id>'
 
-@wines_blueprint.route("/wines/<id>", strict_slashes=False, methods=['POST'])
+@producers_blueprint.route("/producers/<id>", strict_slashes=False, methods=['POST'])
 def update_wine(id):
     wine_name = request.form['wine-name']
     producer_id = request.form['producer-id']
@@ -81,13 +81,13 @@ def update_wine(id):
     sell_price = request.form['sell-price']
     wine = Wine(wine_name, producer, stock, net_price, sell_price)
     wine_repository.update(wine)
-    return redirect('/wines')
+    return redirect('/producers')
 
 
 # DELETE
-# DELETE '/wines/<id>', finalised..
+# DELETE '/producers/<id>', finalised..
 
-@wines_blueprint.route("/wines/<id>/delete", strict_slashes=False, methods=['POST'])
+@producers_blueprint.route("/producers/<id>/delete", strict_slashes=False, methods=['POST'])
 def delete_wine(id):
     wine_repository.delete(id)
-    return redirect('/wines')
+    return redirect('/producers')

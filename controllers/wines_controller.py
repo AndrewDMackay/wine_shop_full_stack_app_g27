@@ -19,7 +19,7 @@ wines_blueprint = Blueprint("wines", __name__)
 @wines_blueprint.route("/wines", strict_slashes=False, methods=['GET'])
 def wines():
     wines = wine_repository.select_all()
-    return render_template("wines/index.html", all_wines = wines)
+    return render_template('wines/index.html', all_wines = wines)
 
 
 # NEW
@@ -29,7 +29,7 @@ def wines():
 @wines_blueprint.route("/wines/new", strict_slashes=False, methods=['GET'])
 def new_wines():
     producers = producer_repository.select_all()
-    return render_template("wines/new.html", all_producers = producers)
+    return render_template('wines/new.html', all_producers = producers)
 
 
 # CREATE

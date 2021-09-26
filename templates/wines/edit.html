@@ -4,11 +4,11 @@
 
 <form action="/wines/{{ wine.id }}" method="post">
     <div>
-        <label for="wine_name">WINE NAME</label>
-        <input type="text" id="wine_name" name="wine_name" value="{{ wine.wine_name }}" required autofocus>
+        <label for="wine-name">WINE NAME</label>
+        <input type="text" id="wine-name" name="wine-name" value="{{ wine.wine_name }}" required autofocus>
     </div>
     <div>
-        <label for="producer">producer</label>
+        <label for="producer">PRODUCER</label>
         <select id="producer" name="producer_id">
         {% for producer in all_producers %}
         <option value="{{ producer.id }}" {% if wine.producer.id == producer.id %} selected="selected" {% endif %}>{{ producer.producer_name }}</option>

@@ -2,7 +2,8 @@
 body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-size: 16px;
-    color: black;
+    color: hsla(0, 0%, 0%, 0.800);
+    font-size: 12;
   }
   
   
@@ -11,55 +12,49 @@ body {
   }
 
 
-  .wine {
-    border: 1px solid darkgrey;
+  .grid-container {
+    display: grid;
+  }
+
+  .grid-wine {
+    border: 1.75px solid darkgrey;
     width: 300px;
     min-height: 68px;
     padding: 10px;
     display: flex;
     line-height: 18px;
     margin-bottom: 10px;
+    align-content: center;
   }
   
 
-  .wine_name {
+  .wine-name {
     font-weight: bold;
-    margin-bottom: 0.5em;
-    margin-right: 0.3em;
+    font-size: 12px;
   }
   
 
-  .producer {
+  .grid-content {
+    font-weight: bold;
     color: grey;
-    font-size: 14px;
     margin-left: 20px;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-right: 0.5em;
   }
   
 
   .buttons {
     margin-top: 10px;
-    margin-left: 2px;
-    font-size: 1.4em;
+    margin-left: 5px;
+    padding: 5px;
+    font-size: 1.5em;
     color: lightgrey;
   }
   
 
-  /* .buttons i {
-    width: 80px;
-  } */
-
-
-  /* input, select, button {
-    font-size: 80%;
-    width : 100%;
-    padding: 10px;
-    margin: 10px;
-    box-sizing: border-box;
-    color: hsla(0, 0%, 0%, 0.800);
-  } */
-
   input, select {
-    font-size: 80%;
+    font-size: 60%;
     width : 100%;
     padding: 10px;
     margin: 10px;
@@ -70,8 +65,15 @@ body {
 
   .image-button {
     display: contents;
-    font-size: 65%;
     cursor:pointer;
+    font-size: 75%;
+  }
+
+
+  .float-button {
+    display: contents;
+    cursor:pointer;
+    font-size: 75%;
   }
   
   
@@ -87,7 +89,7 @@ body {
     overflow: hidden;
     width: 100%;
     padding: 30px;
-    background-color: black;
+    background-color: hsla(0, 0%, 0%, 0.900);
     color: white;
     font-weight: bold;
   }

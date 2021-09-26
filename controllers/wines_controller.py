@@ -38,12 +38,12 @@ def new_wines():
 
 @wines_blueprint.route("/wines", strict_slashes=False, methods=['POST'])
 def create_wine():
-    wine_name = request.form['wine_name']
+    wine_name = request.form['wine-name']
     producer_id = request.form['producer_id']
     producer = producer_repository.select(producer_id)
     stock = request.form['stock']
-    net_price = request.form['net_price']
-    sell_price = request.form['sell_price']
+    net_price = request.form['net-price']
+    sell_price = request.form['sell-price']
     wine = Wine(wine_name, producer, stock, net_price, sell_price)
     wine_repository.save(wine)
     return redirect('/wines')
@@ -73,12 +73,12 @@ def edit_wine(id):
 
 @wines_blueprint.route("/wines/<id>", strict_slashes=False, methods=['POST'])
 def update_wine(id):
-    wine_name = request.form['wine_name']
-    producer_id = request.form['producer_id']
+    wine_name = request.form['wine-name']
+    producer_id = request.form['producer-id']
     producer = producer_repository.select(producer_id)
     stock = request.form['stock']
-    net_price = request.form['net_price']
-    sell_price = request.form['sell_price']
+    net_price = request.form['net-price']
+    sell_price = request.form['sell-price']
     wine = Wine(wine_name, producer, stock, net_price, sell_price)
     wine_repository.update(wine)
     return redirect('/wines')

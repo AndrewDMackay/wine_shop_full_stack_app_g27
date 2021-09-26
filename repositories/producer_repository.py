@@ -31,7 +31,7 @@ def select_all():
     results = run_sql(sql)
 
     for row in results:
-        producer = Producer(row['producer_name'], row['producer_name'], row['country'], row['region'], row['producer_description'], row['id'])
+        producer = Producer(row['producer_name'], row['country'], row['region'], row['producer_description'], row['id'])
         producers.append(producer)
     return producers
 
@@ -43,7 +43,7 @@ def select(id):
     result = run_sql(sql, values)[0]
 
     if result is not None:
-        producer = Producer(result['producer_name'], result['producer_name'], result['country'], result['region'], result['producer_description'], result['id'])
+        producer = Producer(result['producer_name'], result['country'], result['region'], result['producer_description'], result['id'])
     return producer
     
 
@@ -51,3 +51,19 @@ def update(producer):
     sql = "UPDATE producers SET (producer_name, country, region, producer_description) = (%s, %s, %s, %s) WHERE id = %s"
     values = [producer.producer_name, producer.country, producer.region, producer.producer_description]
     run_sql(sql, values)
+
+
+# producer_repository, key functions..
+
+# 	def save():
+
+# 	def delete_all():
+
+# 	def delete(id):
+
+# 	def select_all():
+
+# 	def select(id):
+
+# 	def update():
+

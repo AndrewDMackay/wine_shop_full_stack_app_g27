@@ -57,12 +57,17 @@ def update(wine):
     run_sql(sql, values)
 
 
+# wine_repository, key functions..
 
+# 	def save():
 
+# 	def delete_all():
 
+# 	def delete(id):
 
+# 	def select_all():
 
+# 	def select(id):
 
-
-
+# 	def update():
 

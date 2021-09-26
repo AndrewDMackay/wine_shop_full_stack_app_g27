@@ -24,9 +24,10 @@
         {% for producer in all_producers %}
         <option value="{{ producer.id }}">{{ producer.producer_name }}</option>
         {% endfor %}
-        </select>
+        </select><br>
+        <br>
+        <button class="image-button" type="submit"><i class="fas fa-edit fa-3x" style="color:black" aria-hidden="true"></i></button>
     </div>
-    <button type="submit"><i class="fas fa-edit fa-3x" style="color:black" aria-hidden="true"></i></button>
 </form>
 
 {% endblock %}

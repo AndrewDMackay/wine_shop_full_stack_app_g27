@@ -1,52 +1,65 @@
 from db.run_sql import run_sql
 
-from models.author import Author
+from models.book import Book
 import repositories.author_repository as author_repository
 
 
-def save(author):
-    sql = "INSERT INTO authors (name) VALUES (%s) RETURNING *"
-    values = [author.name]
+def save(book):
+    sql = "INSERT INTO books (title, author_id) VALUES (%s, %s) RETURNING *"
+    values = [book.title, book.author.id]
     results = run_sql(sql, values)
-    id = results[0]['id']
-    author.id = id
-    return author
+    id = results[0]["id"]
+    book.id = id
+    return book
 
 
 def delete_all():
-    sql = "DELETE  FROM authors"
+    sql = "DELETE  FROM books"
     run_sql(sql)
 
 
 def delete(id):
-    sql = "DELETE  FROM authors WHERE id = %s"
+    sql = "DELETE  FROM books WHERE id = %s"
     values = [id]
     run_sql(sql, values)
 
 
 def select_all():
-    authors = []
-    sql = "SELECT * FROM authors"
+    books = []
+    sql = "SELECT * FROM books"
     results = run_sql(sql)
 
     for row in results:
-        author = Author(row['name'], row['id'])
-        authors.append(author)
-    return authors
+        author = author_repository.select(row['author_id'])
+        book = Book(row['title'], author, row['id'])
+        books.append(book)
+    return books
 
 
 def select(id):
-    author = None
-    sql = "SELECT * FROM authors WHERE id = %s"
+    book = None
+    sql = "SELECT * FROM books WHERE id = %s"
     values = [id]
     result = run_sql(sql, values)[0]
 
     if result is not None:
-        author = Author(result['name'], result['id'] )
-    return author
-    
+        author = author_repository.select(result['author_id'])
+        book = Book(result['title'], author, result['id'])
+    return book
 
-def update(author):
-    sql = "UPDATE authors SET (name) = (%s) WHERE id = %s"
-    values = [author.name]
+
+def update(book):
+    sql = "UPDATE books SET (title, author, author_id) = (%s, %s, %s) WHERE id = %s"
+    values = [book.title, book.author.id, book.id]
     run_sql(sql, values)
+
+
+
+
+
+
+
+
+
+
+

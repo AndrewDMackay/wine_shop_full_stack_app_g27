@@ -1,6 +1,6 @@
 from db.run_sql import run_sql
 
-from models.wine import wine
+from models.wine import Wine
 import repositories.producer_repository as producer_repository
 
 

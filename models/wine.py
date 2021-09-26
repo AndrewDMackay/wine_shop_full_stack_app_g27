@@ -1,8 +1,8 @@
 
 class Wine:
-    def __init__(self, wine_name, producer_name, stock, net_price, sell_price, id = None):
+    def __init__(self, wine_name, producer, stock, net_price, sell_price, id = None):
         self.wine_name = wine_name
-        self.producer_name = producer_name
+        self.producer = producer
         self.stock = stock
         self.net_price = net_price
         self.sell_price = sell_price

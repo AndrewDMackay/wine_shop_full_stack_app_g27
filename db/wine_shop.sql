@@ -1,14 +1,21 @@
 
-DROP TABLE IF EXISTS books;
-DROP TABLE IF EXISTS authors;
+DROP TABLE IF EXISTS wines;
+DROP TABLE IF EXISTS producers;
 
-CREATE TABLE authors (
+CREATE TABLE producers (
   id SERIAL PRIMARY KEY,
-  name VARCHAR(255)
+  producer_name VARCHAR(255),
+  country VARCHAR(255),
+  region VARCHAR(255),
+  producer_description VARCHAR(255)
 );
 
-CREATE TABLE books (
+CREATE TABLE wines (
   id SERIAL PRIMARY KEY,
-  title VARCHAR(255),
-  author_id INT REFERENCES authors(id)
+  wine_name VARCHAR(255),
+  stock INT,
+  net_price DECIMAL,
+  sell_price DECIMAL,
+  producer_id INT REFERENCES producers(id)
 );
+

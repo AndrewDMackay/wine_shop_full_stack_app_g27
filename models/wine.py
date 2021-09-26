@@ -8,8 +8,9 @@ class Wine:
         self.sell_price = sell_price
         self.id = id
 
-# class Wine:
-#  
+
+# class Wine: properties, and priorities..
+
 # Priority	Property	            Example Input
 # 1	        Name	                Vino Bianco IGT, Slatnick 
 # 1	        Producer Name           Radikon [ Import from Producer Class.. ]

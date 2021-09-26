@@ -1,52 +1,52 @@
 from db.run_sql import run_sql
 
-from models.author import Author
-import repositories.author_repository as author_repository
+from models.producer import Producer
+import repositories.wine_repository as wine_repository
 
 
-def save(author):
-    sql = "INSERT INTO authors (name) VALUES (%s) RETURNING *"
-    values = [author.name]
+def save(producer):
+    sql = "INSERT INTO producers (name) VALUES (%s) RETURNING *"
+    values = [producer.name]
     results = run_sql(sql, values)
     id = results[0]['id']
-    author.id = id
-    return author
+    producer.id = id
+    return producer
 
 
 def delete_all():
-    sql = "DELETE  FROM authors"
+    sql = "DELETE  FROM producers"
     run_sql(sql)
 
 
 def delete(id):
-    sql = "DELETE  FROM authors WHERE id = %s"
+    sql = "DELETE  FROM producers WHERE id = %s"
     values = [id]
     run_sql(sql, values)
 
 
 def select_all():
-    authors = []
-    sql = "SELECT * FROM authors"
+    producers = []
+    sql = "SELECT * FROM producers"
     results = run_sql(sql)
 
     for row in results:
-        author = Author(row['name'], row['id'])
-        authors.append(author)
-    return authors
+        producer = producer(row['name'], row['id'])
+        producers.append(producer)
+    return producers
 
 
 def select(id):
-    author = None
-    sql = "SELECT * FROM authors WHERE id = %s"
+    producer = None
+    sql = "SELECT * FROM producers WHERE id = %s"
     values = [id]
     result = run_sql(sql, values)[0]
 
     if result is not None:
-        author = Author(result['name'], result['id'] )
-    return author
+        producer = producer(result['name'], result['id'] )
+    return producer
     
 
-def update(author):
-    sql = "UPDATE authors SET (name) = (%s) WHERE id = %s"
-    values = [author.name]
+def update(producer):
+    sql = "UPDATE producers SET (name) = (%s) WHERE id = %s"
+    values = [producer.name]
     run_sql(sql, values)

@@ -1,56 +1,56 @@
 from db.run_sql import run_sql
 
-from models.book import Book
-import repositories.author_repository as author_repository
+from models.wine import wine
+import repositories.producer_repository as producer_repository
 
 
-def save(book):
-    sql = "INSERT INTO books (title, author_id) VALUES (%s, %s) RETURNING *"
-    values = [book.title, book.author.id]
+def save(wine):
+    sql = "INSERT INTO wines (title, producer_id) VALUES (%s, %s) RETURNING *"
+    values = [wine.title, wine.producer.id]
     results = run_sql(sql, values)
     id = results[0]["id"]
-    book.id = id
-    return book
+    wine.id = id
+    return wine
 
 
 def delete_all():
-    sql = "DELETE  FROM books"
+    sql = "DELETE  FROM wines"
     run_sql(sql)
 
 
 def delete(id):
-    sql = "DELETE  FROM books WHERE id = %s"
+    sql = "DELETE  FROM wines WHERE id = %s"
     values = [id]
     run_sql(sql, values)
 
 
 def select_all():
-    books = []
-    sql = "SELECT * FROM books"
+    wines = []
+    sql = "SELECT * FROM wines"
     results = run_sql(sql)
 
     for row in results:
-        author = author_repository.select(row['author_id'])
-        book = Book(row['title'], author, row['id'])
-        books.append(book)
-    return books
+        producer = producer_repository.select(row['producer_id'])
+        wine = wine(row['title'], producer, row['id'])
+        wines.append(wine)
+    return wines
 
 
 def select(id):
-    book = None
-    sql = "SELECT * FROM books WHERE id = %s"
+    wine = None
+    sql = "SELECT * FROM wines WHERE id = %s"
     values = [id]
     result = run_sql(sql, values)[0]
 
     if result is not None:
-        author = author_repository.select(result['author_id'])
-        book = Book(result['title'], author, result['id'])
-    return book
+        producer = producer_repository.select(result['producer_id'])
+        wine = wine(result['title'], producer, result['id'])
+    return wine
 
 
-def update(book):
-    sql = "UPDATE books SET (title, author, author_id) = (%s, %s, %s) WHERE id = %s"
-    values = [book.title, book.author.id, book.id]
+def update(wine):
+    sql = "UPDATE wines SET (title, producer, producer_id) = (%s, %s, %s) WHERE id = %s"
+    values = [wine.title, wine.producer.id, wine.id]
     run_sql(sql, values)
 
 

@@ -8,7 +8,7 @@ body {
     color: hsla(0, 0%, 0%, 0.800);
   }
 
-  .book {
+  .wine {
     border: 1px solid darkgrey;
     width: 300px;
     min-height: 68px;
@@ -24,7 +24,7 @@ body {
     margin-right: 0.3em;
   }
   
-  .author {
+  .producer {
     color: grey;
     font-size: 14px;
     margin-left: 20px;

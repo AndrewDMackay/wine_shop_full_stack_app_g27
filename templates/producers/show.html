@@ -1,0 +1,19 @@
+
+{% extends 'base.html' %}
+{% block content  %}
+
+    <div class="book">
+        <div class="content">
+            <p><strong>{{ book.title }}</strong></p>
+            <hr>
+            <p>{{ book.author.name }}</p>
+            <div>
+                <a href="/books/{{ book.id }}/edit">
+                    <button class="trash-button"><i class="fas fa-edit fa-3x" style="color:black" aria-hidden="true"></i></button>
+                </a>
+            </div>
+        </div>
+    </div>
+
+{% endblock  %}
+

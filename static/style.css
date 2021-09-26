@@ -51,7 +51,7 @@ body {
     color: hsla(0, 0%, 0%, 0.800);
   }
   
-  .trash-button {
+  .image-button {
     display: contents;
     font-size: 65%;
     cursor:pointer;

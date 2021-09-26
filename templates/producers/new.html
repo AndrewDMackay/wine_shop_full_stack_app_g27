@@ -2,16 +2,27 @@
 {% extends "base.html" %}
 {% block content %}
 
-<form action="/books" method="post">
+<form action="/wines" method="post">
     <div>
-        <label for="title"><strong>TITLE</strong></label>
-        <input type="text" id="title" name="title" placeholder="Title.." required autofocus>
+        <label for="wine_name"><strong>WINE NAME</strong></label>
+        <input type="text" id="wine_name" name="wine_name" placeholder="WINE NAME.." required autofocus>
     </div>
     <div>
-        <label for="author"><strong>AUTHOR</strong></label>
-        <select id="author" name="author_id">
-        {% for author in all_authors %}
-        <option value="{{ author.id }}">{{ author.name }}</option>
+        <label for="stock"><strong>STOCK</strong></label>
+        <input type="text" id="stock" name="stock" placeholder="STOCK.." required autofocus>
+    </div>
+    <div>
+        <label for="net_price"><strong>NET PRICE</strong></label>
+        <input type="text" id="net_price" name="net_price" placeholder="NET PRICE.." required autofocus>
+    </div>
+    <div>
+        <label for="sell_price"><strong>SELL PRICE</strong></label>
+        <input type="text" id="sell_price" name="sell_price" placeholder="SELL PRICE.." required autofocus>
+    </div>
+        <label for="producer"><strong>PRODUCER</strong></label>
+        <select id="producer" name="producer_id">
+        {% for producer in all_producers %}
+        <option value="{{ producer.id }}">{{ producer.producer_name }}</option>
         {% endfor %}
         </select>
     </div>

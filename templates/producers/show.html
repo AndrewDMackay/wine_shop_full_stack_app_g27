@@ -2,13 +2,13 @@
 {% extends 'base.html' %}
 {% block content  %}
 
-    <div class="book">
+    <div class="wine">
         <div class="content">
-            <p><strong>{{ book.title }}</strong></p>
+            <p><strong>{{ wine.title }}</strong></p>
             <hr>
-            <p>{{ book.author.name }}</p>
+            <p>{{ wine.producer.producer_name }}</p>
             <div>
-                <a href="/books/{{ book.id }}/edit">
+                <a href="/wines/{{ wine.id }}/edit">
                     <button class="trash-button"><i class="fas fa-edit fa-3x" style="color:black" aria-hidden="true"></i></button>
                 </a>
             </div>

@@ -12,7 +12,6 @@ def save(producer):
     producer.id = id
     return producer
 
-producer_name, country, region, producer_description
 
 def delete_all():
     sql = "DELETE  FROM producers"

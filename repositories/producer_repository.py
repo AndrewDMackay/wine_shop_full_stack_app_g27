@@ -31,7 +31,7 @@ def select_all():
     results = run_sql(sql)
 
     for row in results:
-        producer = producer(row['producer_name'], row['producer_name'], row['country'], row['region'], row['producer_description'], row['id'])
+        producer = Producer(row['producer_name'], row['producer_name'], row['country'], row['region'], row['producer_description'], row['id'])
         producers.append(producer)
     return producers
 
@@ -43,7 +43,7 @@ def select(id):
     result = run_sql(sql, values)[0]
 
     if result is not None:
-        producer = producer(result['producer_name'], result['producer_name'], result['country'], result['region'], result['producer_description'], result['id'])
+        producer = Producer(result['producer_name'], result['producer_name'], result['country'], result['region'], result['producer_description'], result['id'])
     return producer
     
 

@@ -32,7 +32,7 @@ def select_all():
 
     for row in results:
         producer = producer_repository.select(row['producer_id'])
-        wine = wine(row['wine_name'], producer, row['stock'], row['net_price'], row['sell_price'], row['id'])
+        wine = Wine(row['wine_name'], producer, row['stock'], row['net_price'], row['sell_price'], row['id'])
         wines.append(wine)
     return wines
 
@@ -47,7 +47,7 @@ def select(id):
 
     if result is not None:
         producer = producer_repository.select(result['producer_id'])
-        wine = wine(result['wine_name'], producer, result['stock'], result['net_price'], result['sell_price'], result['id'])
+        wine = Wine(result['wine_name'], producer, result['stock'], result['net_price'], result['sell_price'], result['id'])
     return wine
 
 

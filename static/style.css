@@ -12,17 +12,25 @@ body {
   }
 
 
-  .grid-container {
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-    grid-template-areas: "grid wine";    
-    grid-gap: 50px;
+  .base-container {
+    padding-left: 30px;
+    padding-top: 100px;
+    width: 300px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
   }
 
 
-  .grid-wine {
-    font-size: 13px;
+  .grid-container {
+    display: flex;
+  }
+
+
+  .grid-item {
     border: 1.75px solid darkgrey;
+    font-size: 12px;
     width: 300px;
     min-height: 68px;
     padding: 10px;
@@ -30,6 +38,7 @@ body {
     margin-bottom: 10px;
   }
   
+
   .grid-content {
     font-weight: bold;
     color: grey;
@@ -39,6 +48,26 @@ body {
     margin-right: 0.5em;
   }
 
+
+  .content {
+    font-weight: bold;
+    color: grey;
+    margin-left: 20px;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-right: 0.5em;
+  }
+
+
+  .item {
+    border: 1.75px solid darkgrey;
+    font-size: 12px;
+    width: 300px;
+    min-height: 68px;
+    padding: 10px;
+    line-height: 18px;
+    margin-bottom: 10px;
+  }
 
   .wine-name {
     font-weight: bold;
@@ -116,11 +145,4 @@ body {
   }
   
 
-  .container {
-    padding-left: 30px;
-    padding-top: 100px;
-    width: 300px;
-    margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
-  }
+  

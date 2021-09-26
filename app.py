@@ -7,7 +7,7 @@ from controllers.producers_controller import producers_blueprint
 app = Flask(__name__)
 
 app.register_blueprint(wines_blueprint)
-app.register_blueprint(wines_blueprint)
+app.register_blueprint(producers_blueprint)
 
 @app.route('/')
 def home():

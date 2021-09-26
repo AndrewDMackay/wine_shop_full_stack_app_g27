@@ -2,13 +2,13 @@
 {% extends "base.html" %}
 {% block content %}
 
-{% for wine in all_wines %}
+{% for producer in all_producers %}
   <div class="grid-container">
-    <div class="grid-wine">
+    <div class="grid-item">
       <div class="grid-content">
-        {{ wine.producer.producer_name }}
+        {{ wine.producer.country }}
         <div class="wine-name">
-          <a href="/wines/{{ wine.id }}">{{ wine.wine_name }}</a>
+          <a href="/producers/{{ producer.id }}">{{ producer.producer_name }}</a>
         </div>
           <div class="buttons">
             <form class="delete-form" action="/wines/{{wine.id}}/delete" method="POST">

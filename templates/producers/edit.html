@@ -2,10 +2,10 @@
 {% extends "base.html" %}
 {% block content %}
 
-<form action="/wines/{{ wine.id }}" method="post">
+<form action="/producers/{{ producer.id }}" method="post">
     <div>
-        <label for="wine-name">WINE NAME</label>
-        <input type="text" id="wine-name" name="wine-name" value="{{ wine.wine_name }}" required autofocus>
+        <label for="producer-name">PRODUCER NAME</label>
+        <input type="text" id="producer-name" name="producer-name" value="{{ producer.producer_name }}" required autofocus>
     </div>
     <div>
         <label for="producer">PRODUCER</label>

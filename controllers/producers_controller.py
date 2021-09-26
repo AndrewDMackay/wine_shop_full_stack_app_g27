@@ -27,7 +27,7 @@ def producers():
 # Returns an HTML form to the browser, finalised..
 
 @producers_blueprint.route("/producers/new", strict_slashes=False, methods=['GET'])
-def new_wines():
+def new_producers():
     producers = producer_repository.select_all()
     return render_template('producers/new.html', all_producers = producers)
 
@@ -37,15 +37,13 @@ def new_wines():
 # Receives the data from the form to insert into the database, finalised..
 
 @producers_blueprint.route("/producers", strict_slashes=False, methods=['POST'])
-def create_wine():
-    wine_name = request.form['wine-name']
-    producer_id = request.form['producer_id']
-    producer = producer_repository.select(producer_id)
-    stock = request.form['stock']
-    net_price = request.form['net-price']
-    sell_price = request.form['sell-price']
-    wine = Wine(wine_name, producer, stock, net_price, sell_price)
-    wine_repository.save(wine)
+def create_producer():
+    producer_name = request.form['producer-name']
+    country = request.form['country']
+    region = request.form['region']
+    producer_description = request.form['producer-description']
+    producer = Producer(producer_name, country, region, producer_description)
+    producer_repository.save(producer)
     return redirect('/producers')
 
 
@@ -53,34 +51,32 @@ def create_wine():
 # # GET '/producers/<id>', finalised..
 
 @producers_blueprint.route("/producers/<id>", strict_slashes=False, methods=['GET'])
-def show_wine(id):
-    wine = wine_repository.select(id)
-    return render_template('producers/show.html', wine = wine)
+def show_producer(id):
+    producer = producer_repository.select(id)
+    return render_template('producers/show.html', producer = producer)
 
 
 # EDIT
 # GET '/producers/<id>/edit', finalised..
 
 @producers_blueprint.route("/producers/<id>/edit", strict_slashes=False, methods=['GET'])
-def edit_wine(id):
-    wine = wine_repository.select(id)
+def edit_producer(id):
+    producer = producer_repository.select(id)
     producers = producer_repository.select_all()
-    return render_template('producers/edit.html', wine = wine, all_producers = producers)
+    return render_template('producers/edit.html', producer = producer, all_producers = producers)
 
 
 # UPDATE
 # PUT '/producers/<id>'
 
 @producers_blueprint.route("/producers/<id>", strict_slashes=False, methods=['POST'])
-def update_wine(id):
-    wine_name = request.form['wine-name']
-    producer_id = request.form['producer-id']
-    producer = producer_repository.select(producer_id)
-    stock = request.form['stock']
-    net_price = request.form['net-price']
-    sell_price = request.form['sell-price']
-    wine = Wine(wine_name, producer, stock, net_price, sell_price)
-    wine_repository.update(wine)
+def update_producer(id):
+    producer_name = request.form['producer-name']
+    country = request.form['country']
+    region = request.form['region']
+    producer_description = request.form['producer-description']
+    producer = Producer(producer_name, country, region, producer_description)
+    producer_repository.update(producer)
     return redirect('/producers')
 
 
@@ -88,6 +84,6 @@ def update_wine(id):
 # DELETE '/producers/<id>', finalised..
 
 @producers_blueprint.route("/producers/<id>/delete", strict_slashes=False, methods=['POST'])
-def delete_wine(id):
-    wine_repository.delete(id)
+def delete_producer(id):
+    producer_repository.delete(id)
     return redirect('/producers')

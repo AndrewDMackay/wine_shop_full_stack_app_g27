@@ -5,13 +5,14 @@ import repositories.wine_repository as wine_repository
 
 
 def save(producer):
-    sql = "INSERT INTO producers (name) VALUES (%s) RETURNING *"
-    values = [producer.name]
+    sql = "INSERT INTO producers (producer_name, country, region, producer_description) VALUES (%s, %s, %s, %s) RETURNING *"
+    values = [producer.producer_name, producer.country, producer.region, producer.producer_description]
     results = run_sql(sql, values)
     id = results[0]['id']
     producer.id = id
     return producer
 
+producer_name, country, region, producer_description
 
 def delete_all():
     sql = "DELETE  FROM producers"
@@ -30,7 +31,7 @@ def select_all():
     results = run_sql(sql)
 
     for row in results:
-        producer = producer(row['name'], row['id'])
+        producer = producer(row['producer_name'], row['producer_name'], row['country'], row['region'], row['producer_description'], row['id'])
         producers.append(producer)
     return producers
 
@@ -42,11 +43,11 @@ def select(id):
     result = run_sql(sql, values)[0]
 
     if result is not None:
-        producer = producer(result['name'], result['id'] )
+        producer = producer(result['producer_name'], result['producer_name'], result['country'], result['region'], result['producer_description'], result['id'])
     return producer
     
 
 def update(producer):
-    sql = "UPDATE producers SET (name) = (%s) WHERE id = %s"
-    values = [producer.name]
+    sql = "UPDATE producers SET (producer_name, country, region, producer_description) = (%s, %s, %s, %s) WHERE id = %s"
+    values = [producer.producer_name, producer.country, producer.region, producer.producer_description]
     run_sql(sql, values)

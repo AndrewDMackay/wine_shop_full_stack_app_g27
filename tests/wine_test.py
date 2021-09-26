@@ -4,6 +4,7 @@ import unittest
 from models.wine import Wine
 from models.producer import Producer
 
+
 class TestWine(unittest.TestCase):
     
     def setUp(self):

@@ -1,0 +1,22 @@
+
+{% extends "base.html" %}
+{% block content %}
+
+<form action="/wines/{{ wine.id }}" method="post">
+    <div>
+        <label for="wine-name">WINE NAME</label>
+        <input type="text" id="wine-name" name="wine-name" value="{{ wine.wine_name }}" required autofocus>
+    </div>
+    <div>
+        <label for="producer">PRODUCER</label>
+        <select id="producer" name="producer_id">
+        {% for producer in all_producers %}
+        <option value="{{ producer.id }}" {% if wine.producer.id == producer.id %} selected="selected" {% endif %}>{{ producer.producer_name }}</option>
+        {% endfor %}
+        </select>
+    </div>
+    <div class="buttons">
+        <button class="image-button"><i class="fa fa-trash-o fa-3x" style="color:black" aria-hidden="true"></i></button>
+    </div>
+</form>
+{% endblock %}

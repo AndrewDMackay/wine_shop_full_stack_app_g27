@@ -1,0 +1,24 @@
+
+{% extends "base.html" %}
+{% block content %}
+
+{% for wine in all_wines %}
+  <div class="grid-container">
+    <div class="grid-wine">
+      <div class="grid-content">
+        {{ wine.producer.producer_name }}
+        <div class="wine-name">
+          <a href="/wines/{{ wine.id }}">{{ wine.wine_name }}</a>
+        </div>
+          <div class="buttons">
+            <form class="delete-form" action="/wines/{{wine.id}}/delete" method="POST">
+              <button class="image-button"><i class="fa fa-trash-o fa-3x" style="color:black" aria-hidden="true"></i></button>
+            </form>
+          </div>
+      </div>
+    </div>
+  </div>
+{% endfor %}
+
+{% endblock %}
+

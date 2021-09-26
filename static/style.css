@@ -14,26 +14,22 @@ body {
 
   .grid-container {
     display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-areas: "grid wine";    
+    grid-gap: 50px;
   }
 
+
   .grid-wine {
+    font-size: 13px;
     border: 1.75px solid darkgrey;
     width: 300px;
     min-height: 68px;
     padding: 10px;
-    display: flex;
     line-height: 18px;
     margin-bottom: 10px;
-    align-content: center;
   }
   
-
-  .wine-name {
-    font-weight: bold;
-    font-size: 12px;
-  }
-  
-
   .grid-content {
     font-weight: bold;
     color: grey;
@@ -42,8 +38,14 @@ body {
     margin-bottom: 0.5em;
     margin-right: 0.5em;
   }
-  
 
+
+  .wine-name {
+    font-weight: bold;
+    font-size: 12px;
+  }
+  
+  
   .buttons {
     margin-top: 10px;
     margin-left: 5px;
@@ -115,11 +117,10 @@ body {
   
 
   .container {
-    float: left;
     padding-left: 30px;
     padding-top: 100px;
-    display: flex;
-    flex-wrap: wrap;
     width: 300px;
     margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
   }

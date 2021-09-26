@@ -1,0 +1,19 @@
+
+{% extends 'base.html' %}
+{% block content  %}
+
+    <div class="wine">
+        <div class="content">
+            <p><strong>{{ wine.title }}</strong></p>
+            <hr>
+            <p>{{ wine.producer.producer_name }}</p>
+            <div>
+                <a href="/wines/{{ wine.id }}/edit">
+                    <button class="image-button"><i class="fas fa-edit fa-3x" style="color:black" aria-hidden="true"></i></button>
+                </a>
+            </div>
+        </div>
+    </div>
+
+{% endblock  %}
+

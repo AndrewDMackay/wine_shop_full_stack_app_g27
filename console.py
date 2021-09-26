@@ -1,30 +1,54 @@
 import pdb
 
-from models.book import Book
-from models.author import Author
+from models.wine import Wine
+from models.producer import Producer
 
-import repositories.book_repository as book_repository
-import repositories.author_repository as author_repository
+import repositories.wine_repository as wine_repository
+import repositories.producer_repository as producer_repository
 
-book_repository.delete_all()
-author_repository.delete_all()
+# wine_repository.delete_all()
+# producer_repository.delete_all()
 
-author1 = Author("J.R.R. Tolkein")
-author_repository.save(author1)
+# producer1 = producer(?)
+# producer_repository.save(producer1)
 
-author2 = Author("Christopher, and J.R.R. Tolkein")
-author_repository.save(author2)
+# producer2 = producer(?)
+# producer_repository.save(producer2)
 
-author_repository.select_all()
+# producer3 = producer(?)
+# producer_repository.save(producer3)
 
-book1 = Book("The Lord Of The Rings", author1)
-book_repository.save(book1)
+# producer_repository.select_all()
 
-book2 = Book("The Hobbit", author1)
-book_repository.save(book2)
 
-book3 = Book("The Silmarillion", author2)
-book_repository.save(book3)
+# wine1 = wine(?, producer1)
+# wine_repository.save(wine1)
+
+# wine2 = wine(?, producer1)
+# wine_repository.save(wine2)
+
+# wine3 = wine(?, producer1)
+# wine_repository.save(wine3)
+
+# wine4 = wine(?, producer2)
+# wine_repository.save(wine4)
+
+# wine5 = wine(?, producer2)
+# wine_repository.save(wine5)
+
+# wine6 = wine(?, producer2)
+# wine_repository.save(wine6)
+
+# wine7 = wine(?, producer3)
+# wine_repository.save(wine7)
+
+# wine8 = wine(?, producer3)
+# wine_repository.save(wine8)
+
+# wine9 = wine(?, producer3)
+# wine_repository.save(wine9)
+
+# wine_repository.select_all()
 
 
 pdb.set_trace()

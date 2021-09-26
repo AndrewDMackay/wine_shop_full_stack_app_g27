@@ -1,6 +1,8 @@
+
 import unittest
  
-from tests.task_test import TestTask
+from tests.wine_test import TestWine
+from tests.producer_test import TestProducer
  
  
 if __name__ == '__main__':

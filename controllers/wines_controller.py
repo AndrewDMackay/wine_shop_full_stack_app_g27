@@ -1,6 +1,8 @@
 
-from controllers.producers_controller import producers
+
 import re
+
+from controllers.producers_controller import producers
 
 from flask import Flask, render_template, request, redirect
 from flask import Blueprint

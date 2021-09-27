@@ -6,8 +6,8 @@ import repositories.wine_repository as wine_repository
 
 
 def save(producer):
-    sql = "INSERT INTO producers (producer_name, country, region, producer_description) VALUES (%s, %s, %s, %s) RETURNING *"
-    values = [producer.producer_name, producer.country, producer.region, producer.producer_description]
+    sql = "INSERT INTO producers (producer_name, country, region, winemaker) VALUES (%s, %s, %s, %s) RETURNING *"
+    values = [producer.producer_name, producer.country, producer.region, producer.winemaker]
     results = run_sql(sql, values)
     id = results[0]['id']
     producer.id = id
@@ -31,7 +31,7 @@ def select_all():
     results = run_sql(sql)
 
     for row in results:
-        producer = Producer(row['producer_name'], row['country'], row['region'], row['producer_description'], row['id'])
+        producer = Producer(row['producer_name'], row['country'], row['region'], row['winemaker'], row['id'])
         producers.append(producer)
     return producers
 
@@ -43,13 +43,13 @@ def select(id):
     result = run_sql(sql, values)[0]
 
     if result is not None:
-        producer = Producer(result['producer_name'], result['country'], result['region'], result['producer_description'], result['id'])
+        producer = Producer(result['producer_name'], result['country'], result['region'], result['winemaker'], result['id'])
     return producer
     
 
 def update(producer):
-    sql = "UPDATE producers SET (producer_name, country, region, producer_description) = (%s, %s, %s, %s) WHERE id = %s"
-    values = [producer.producer_name, producer.country, producer.region, producer.producer_description, producer.id]
+    sql = "UPDATE producers SET (producer_name, country, region, winemaker) = (%s, %s, %s, %s) WHERE id = %s"
+    values = [producer.producer_name, producer.country, producer.region, producer.winemaker, producer.id]
     run_sql(sql, values)
 
 

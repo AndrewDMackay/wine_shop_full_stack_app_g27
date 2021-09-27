@@ -41,8 +41,8 @@ def create_producer():
     producer_name = request.form['producer-name']
     country = request.form['country']
     region = request.form['region']
-    producer_description = request.form['producer-description']
-    producer = Producer(producer_name, country, region, producer_description)
+    winemaker = request.form['winemaker']
+    producer = Producer(producer_name, country, region, winemaker)
     producer_repository.save(producer)
     return redirect('/producers')
 
@@ -74,8 +74,8 @@ def update_producer(id):
     producer_name = request.form['producer-name']
     country = request.form['country']
     region = request.form['region']
-    producer_description = request.form['producer-description']
-    producer = Producer(producer_name, country, region, producer_description, id)
+    winemaker = request.form['winemaker']
+    producer = Producer(producer_name, country, region, winemaker, id)
     producer_repository.update(producer)
     return redirect('/producers')
 

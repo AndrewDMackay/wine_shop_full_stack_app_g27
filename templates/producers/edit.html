@@ -7,14 +7,14 @@
         <label for="producer-name">PRODUCER NAME</label>
         <input type="text" id="producer-name" name="producer-name" value="{{ producer.producer_name }}" required autofocus>
     </div>
-    <div>
+    <!-- <div>
         <label for="producer">PRODUCER</label>
         <select id="producer" name="producer_id">
         {% for producer in all_producers %}
-        <option value="{{ producer.id }}" {% if wine.producer.id == producer.id %} selected="selected" {% endif %}>{{ producer.producer_name }}</option>
+        <option value="{{ producer.id }}" {% if producer.id == producer.id %} selected="selected" {% endif %}>{{ producer.producer_name }}</option>
         {% endfor %}
         </select>
-    </div>
+    </div> -->
     <div class="buttons">
         <button class="image-button"><i class="fa fa-trash-o fa-3x" style="color:black" aria-hidden="true"></i></button>
     </div>

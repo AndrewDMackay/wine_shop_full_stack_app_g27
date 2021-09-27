@@ -6,12 +6,12 @@
   <div class="grid-container">
     <div class="grid-item">
       <div class="grid-content">
-        {{ wine.producer.country }}
-        <div class="wine-name">
+        {{ producer.country }}
+        <div class="link-name">
           <a href="/producers/{{ producer.id }}">{{ producer.producer_name }}</a>
         </div>
           <div class="buttons">
-            <form class="delete-form" action="/wines/{{wine.id}}/delete" method="POST">
+            <form class="delete-form" action="/producers/{{producer.id}}/delete" method="POST">
               <button class="image-button"><i class="fa fa-trash-o fa-3x" style="color:black" aria-hidden="true"></i></button>
             </form>
           </div>

@@ -2,13 +2,13 @@
 {% extends 'base.html' %}
 {% block content  %}
 
-    <div class="wine">
+    <div class="item">
         <div class="content">
-            <p><strong>{{ wine.title }}</strong></p>
+            <p><strong>{{ producer.producer_name }}</strong></p>
             <hr>
-            <p>{{ wine.producer.producer_name }}</p>
+            <p>{{ producer.country }}</p>
             <div>
-                <a href="/wines/{{ wine.id }}/edit">
+                <a href="/producers/{{ producer.id }}/edit">
                     <button class="image-button"><i class="fas fa-edit fa-3x" style="color:black" aria-hidden="true"></i></button>
                 </a>
             </div>

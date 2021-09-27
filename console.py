@@ -11,7 +11,7 @@ import repositories.producer_repository as producer_repository
 wine_repository.delete_all()
 producer_repository.delete_all()
 
-producer1 = Producer("Radikon", "Italy", "Friuli", "Saša Radikon.")
+producer1 = Producer("Radikon", "Italy", "Friuli-Venezia Giulia", "Saša Radikon")
 producer_repository.save(producer1)
 
 producer2 = Producer("Pheasant's Tears", "Georgia", "Kakheti", "Gela Patalashvili")
@@ -19,6 +19,24 @@ producer_repository.save(producer2)
 
 producer3 = Producer("Sepp Muster", "Austria", "Susteiermark", "Sepp, and Maria Muster")
 producer_repository.save(producer3)
+
+producer4 = Producer("Gravner", "Italy-Slovenia Border", "Colio, Brda", "Josko Gravner")
+producer_repository.save(producer4)
+
+producer5 = Producer("Domaine Zind Humbrecht", "France", "Alsace, Haut-Rihn", "Olivier Humbrecht, MW")
+producer_repository.save(producer5)
+
+producer6 = Producer("Domaine Josmeyer", "France", "Alsace, Wintzenheim", "Jean Meyer")
+producer_repository.save(producer6)
+
+producer7 = Producer("Emidio Pepe", "Italy", "Abbruzo", "Sofia Pepe")
+producer_repository.save(producer7)
+
+producer8 = Producer("Gut Oggau", "Austria", "Burgenland", "Stephanie, and Eduard Tscheppe")
+producer_repository.save(producer8)
+
+producer9 = Producer("Dario Prinčič", "Italy", "Friuli-Venezia Giulia", "Dario Prinčič")
+producer_repository.save(producer9)
 
 producer_repository.select_all()
 

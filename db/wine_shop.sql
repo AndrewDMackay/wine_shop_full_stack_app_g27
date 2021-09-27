@@ -7,7 +7,7 @@ CREATE TABLE producers (
   producer_name VARCHAR(255),
   country VARCHAR(255),
   region VARCHAR(255),
-  producer_description VARCHAR(255)
+  winemaker VARCHAR(255)
 );
 
 CREATE TABLE wines (

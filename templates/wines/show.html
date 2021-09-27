@@ -19,11 +19,28 @@
             <p>STOCK BOTTLES</p>
             <p>{{ wine.stock }}</p>
             <hr>
+            <p>STOCK ALERT</p>
+            {% if wine.stock <= 0 %}
+              <p>Out Of Stock.. [ <i id="stock-icon" class="fa fa-solid fa-exclamation" style="color:black" aria-hidden="true"></i> ]</p>
+            {% elif wine.stock <= 5 %}
+              <p>Stock Low.. [ <i id="stock-icon" class="fa fa-solid fa-question" style="color:black" aria-hidden="true"></i> ]</p>
+            {% else %}
+              <p>Stock Level Normal [ <i id="stock-icon" class="fa fa-solid fa-check" style="color:black" aria-hidden="true"></i> ] </p>
+            {% endif %}
+          </p>
+          <hr>
             <p>NET PRICE</p>
             <p>{{ wine.net_price }}</p>
             <hr>
             <p>SELL PRICE</p>
             <p>{{ wine.sell_price }}</p>
+            <hr>
+            <p>PERCENTAGE MARGIN</p>
+            {% if wine.net_price != None %}
+              <p>40% GPM [ <i id="stock-icon" class="fa fa-solid fa-check" style="color:black" aria-hidden="true"></i> ] </p>
+            {% else %}
+              <p>No Pricing Loaded.. [ <i id="stock-icon" class="fa fa-solid fa-exclamation" style="color:black" aria-hidden="true"></i> ]</p>
+            {% endif %}
             <hr>
             <div>
                 <p><strong>UPDATE ENTRY</strong></p>

@@ -5,7 +5,7 @@
 {% for wine in all_wines %}
   <div class="grid-container">
     <div class="grid-item">
-      <div class="grid-content">
+      <div class="content">
         <p>PRODUCER</p>
         <p>{{ wine.producer.producer_name }}</p>
         <hr>
@@ -40,7 +40,11 @@
         <p>{{ wine.sell_price }}</p>
         <hr>
         <p>PERCENTAGE MARGIN</p>
-        <p>{{ percentage_margin }}</p>
+        {% if wine.net_price != None %}
+          <p>40% GPM [ <i id="stock-icon" class="fa fa-solid fa-check" style="color:black" aria-hidden="true"></i> ] </p>
+        {% else %}
+          <p>No Pricing Loaded.. [ <i id="stock-icon" class="fa fa-solid fa-exclamation" style="color:black" aria-hidden="true"></i> ]</p>
+        {% endif %}
         <hr>
         <p><strong>DELETE ENTRY</strong></p>
           <div class="buttons">

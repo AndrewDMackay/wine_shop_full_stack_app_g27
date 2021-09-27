@@ -11,13 +11,13 @@ import repositories.producer_repository as producer_repository
 wine_repository.delete_all()
 producer_repository.delete_all()
 
-producer1 = Producer("Radikon", "Italy", "Friuli", "Radikon is a 12 hectare estate on the Slovenian border of Italy, a truly unique winery.")
+producer1 = Producer("Radikon", "Italy", "Friuli", "Saša Radikon.")
 producer_repository.save(producer1)
 
-producer2 = Producer("Producer 2", "Country 2", "Region 2", "Producer Description 2")
+producer2 = Producer("Pheasant's Tears", "Georgia", "Kiziqi", "Gela Patalashvili")
 producer_repository.save(producer2)
 
-producer3 = Producer("Producer 3", "Country 3", "Region 3", "Producer Description 3")
+producer3 = Producer("Sepp Muster", "Austria", "Susteiermark", "Sepp Muster")
 producer_repository.save(producer3)
 
 producer_repository.select_all()

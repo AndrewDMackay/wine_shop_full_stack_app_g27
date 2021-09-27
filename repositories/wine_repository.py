@@ -57,14 +57,6 @@ def update(wine):
     run_sql(sql, values)
 
 
-def check_stock(wine):
-    if wine.stock <=5:
-        return "Stock Low"
-    elif wine.stock == 0:
-        return "Out Of Stock"
-    else:
-        return "Stock Live"
-
 # wine_repository, key functions..
 
 # 	def save():

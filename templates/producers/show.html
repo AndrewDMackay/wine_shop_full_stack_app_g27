@@ -4,14 +4,20 @@
 
     <div class="item">
         <div class="content">
+            <p>PRODUCER</p>
             <p><strong>{{ producer.producer_name }}</strong></p>
             <hr>
+            <p>COUNTRY</p>
             <p>{{ producer.country }}</p>
             <hr>
+            <p>REGION</p>
             <p>{{ producer.region }}</p>
             <hr>
+            <p>DESCRIPTION</p>
             <p>{{ producer.producer_description }}</p>
+            <hr>
             <div>
+                <p><strong>UPDATE ENTRY</strong></p>
                 <a href="/producers/{{ producer.id }}/edit">
                     <button class="image-button"><i class="fas fa-edit fa-3x" style="color:black" aria-hidden="true"></i></button>
                 </a>

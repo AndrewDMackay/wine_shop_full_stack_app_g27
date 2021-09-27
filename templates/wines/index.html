@@ -23,12 +23,24 @@
         <p>STOCK BOTTLES</p>
         <p>{{ wine.stock }}</p>
         <hr>
+        <p>STOCK ALERT</p>
+          {% if wine.stock == 0 %}
+            Out Of Stock..
+            <i class="fa-solid fa-square-xmark" style="color:black" aria-hidden="true"></i>
+          {% elif wine.stock <= 5 %}
+            <p>Stock Low..<i class="fa-solid fa-square-exclamation" style="color:black" aria-hidden="true"></i></p>
+          {% else %}
+            <p>Stock Level Normal<i class="fa-solid fa-square-check" style="color:black" aria-hidden="true"></i></p>
+          {% endif %}
+        </p>
+        <hr>
         <p>NET PRICE</p>
         <p>{{ wine.net_price }}</p>
         <hr>
         <p>SELL PRICE</p>
         <p>{{ wine.sell_price }}</p>
         <hr>
+        <p><strong>DELETE ENTRY</strong></p>
           <div class="buttons">
             <form class="delete-form" action="/wines/{{wine.id}}/delete" method="POST">
               <button class="image-button"><i class="fa fa-trash-o fa-3x" style="color:black" aria-hidden="true"></i></button>

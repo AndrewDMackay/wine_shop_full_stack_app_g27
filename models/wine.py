@@ -8,6 +8,13 @@ class Wine:
         self.sell_price = sell_price
         self.id = id
 
+    def check_stock(wine):
+        if wine.stock <=5:
+            return "Stock Low.."
+        elif wine.stock == 0:
+            return "Out Of Stock.."
+        else:
+            return "Stock Level Normal"
 
 # class Wine: properties, and priorities..
 

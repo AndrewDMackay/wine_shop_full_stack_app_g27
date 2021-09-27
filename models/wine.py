@@ -1,4 +1,7 @@
 
+from flask.scaffold import F
+
+
 class Wine:
     def __init__(self, wine_name, producer, stock, net_price, sell_price, id = None):
         self.wine_name = wine_name
@@ -8,6 +11,7 @@ class Wine:
         self.sell_price = sell_price
         self.id = id
 
+
     def check_stock(wine):
         if wine.stock <=5:
             return "Stock Low.."
@@ -15,6 +19,13 @@ class Wine:
             return "Out Of Stock.."
         else:
             return "Stock Level Normal"
+
+
+    def calculate_margin(wine):
+        inc_vat_price = wine.net_price * 1.2
+        percentage_margin = (wine.sell_price - inc_vat_price) / wine.sell_price
+        print(f"{percentage_margin}%")
+      
 
 # class Wine: properties, and priorities..
 

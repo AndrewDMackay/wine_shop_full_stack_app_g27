@@ -1,4 +1,5 @@
 
+from controllers.producers_controller import producers
 import re
 
 from flask import Flask, render_template, request, redirect
@@ -93,4 +94,13 @@ def delete_wine(id):
     wine_repository.delete(id)
     return redirect('/wines')
 
+
+# FILTER
+# FILTER '/wines/filter/<id>', draft..
+
+# @wines_blueprint.route('/wines/filter/<id>', strict_slashes=False, methods=['GET'])
+# def filter_products_by_producer(id):
+#     id=id
+#     wines = wine_repository.select_all()
+#     return render_template("/products/filters.html", wines = wines, id=id)
 

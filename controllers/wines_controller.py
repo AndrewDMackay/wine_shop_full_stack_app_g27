@@ -92,3 +92,5 @@ def update_wine(id):
 def delete_wine(id):
     wine_repository.delete(id)
     return redirect('/wines')
+
+

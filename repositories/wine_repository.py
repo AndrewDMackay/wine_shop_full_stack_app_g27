@@ -1,4 +1,5 @@
 
+from flask.scaffold import F
 from db.run_sql import run_sql
 
 from models.wine import Wine
@@ -54,7 +55,15 @@ def update(wine):
     sql = "UPDATE wines SET (wine_name, producer_id, stock, net_price, sell_price) = (%s, %s, %s, %s, %s) WHERE id = %s"
     values = [wine.wine_name, wine.producer.id, wine.stock, wine.net_price, wine.sell_price, wine.id]
     run_sql(sql, values)
-    
+
+
+def check_stock(wine):
+    if wine.stock <=5:
+        return "Stock Low"
+    elif wine.stock == 0:
+        return "Out Of Stock"
+    else:
+        return "Stock Live"
 
 # wine_repository, key functions..
 

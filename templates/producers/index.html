@@ -6,10 +6,15 @@
   <div class="grid-container">
     <div class="grid-item">
       <div class="grid-content">
-        {{ producer.country }}
         <div class="link-name">
           <a href="/producers/{{ producer.id }}">{{ producer.producer_name }}</a>
         </div>
+            <hr>
+            <p>{{ producer.country }}</p>
+            <hr>
+            <p>{{ producer.region }}</p>
+            <hr>
+            <p>{{ producer.producer_description }}</p>
           <div class="buttons">
             <form class="delete-form" action="/producers/{{producer.id}}/delete" method="POST">
               <button class="image-button"><i class="fa fa-trash-o fa-3x" style="color:black" aria-hidden="true"></i></button>

@@ -24,7 +24,7 @@ class Wine:
     def calculate_margin(wine):
         inc_vat_price = wine.net_price * 1.2
         percentage_margin = (wine.sell_price - inc_vat_price) / wine.sell_price
-        print(f"{percentage_margin}%")
+        return (f"{percentage_margin}%")
       
 
 # class Wine: properties, and priorities..

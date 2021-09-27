@@ -7,6 +7,17 @@
             <p><strong>{{ wine.wine_name }}</strong></p>
             <hr>
             <p>{{ wine.producer.producer_name }}</p>
+            <hr>
+            <p>{{ wine.producer.country }}</p>
+            <hr>
+            <p>{{ wine.producer.region }}</p>
+            <hr>
+            <p>{{ wine.stock }}</p>
+            <hr>
+            <p>{{ wine.net_price }}</p>
+            <hr>
+            <p>{{ wine.sell_price }}</p>
+            <hr>
             <div>
                 <a href="/wines/{{ wine.id }}/edit">
                     <button class="image-button"><i class="fas fa-edit fa-3x" style="color:black" aria-hidden="true"></i></button>

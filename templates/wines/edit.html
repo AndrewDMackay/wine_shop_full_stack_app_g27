@@ -4,19 +4,29 @@
 
 <form action="/wines/{{ wine.id }}" method="post">
     <div>
-        <label for="wine-name">WINE NAME</label>
-        <input type="text" id="wine-name" name="wine-name" value="{{ wine.wine_name }}" required autofocus>
+        <label for="wine-name"><strong>WINE NAME</strong></label>
+        <input type="text" id="wine-name" name="wine-name" placeholder="WINE NAME.." required autofocus>
     </div>
     <div>
-        <label for="producer">PRODUCER</label>
+        <label for="stock"><strong>STOCK</strong></label>
+        <input type="text" id="stock" name="stock" placeholder="STOCK.." required autofocus>
+    </div>
+    <div>
+        <label for="net-price"><strong>NET PRICE</strong></label>
+        <input type="text" id="net-price" name="net-price" placeholder="NET PRICE.." required autofocus>
+    </div>
+    <div>
+        <label for="sell-price"><strong>SELL PRICE</strong></label>
+        <input type="text" id="sell-price" name="sell-price" placeholder="SELL PRICE.." required autofocus>
+    </div>
+        <label for="producer"><strong>PRODUCER</strong></label>
         <select id="producer" name="producer_id">
         {% for producer in all_producers %}
-        <option value="{{ producer.id }}" {% if wine.producer.id == producer.id %} selected="selected" {% endif %}>{{ producer.producer_name }}</option>
+        <option value="{{ producer.id }}">{{ producer.producer_name }}</option>
         {% endfor %}
-        </select>
-    </div>
-    <div class="buttons">
-        <button class="image-button"><i class="fa fa-trash-o fa-3x" style="color:black" aria-hidden="true"></i></button>
+        </select><br>
+        <br>
+        <button class="image-button" type="submit"><i class="fas fa-edit fa-3x" style="color:black" aria-hidden="true"></i></button>
     </div>
 </form>
 {% endblock %}

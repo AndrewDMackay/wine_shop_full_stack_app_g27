@@ -2,6 +2,7 @@
 from db.run_sql import run_sql
 
 from models.wine import Wine
+from models.producer import Producer
 import repositories.producer_repository as producer_repository
 
 
@@ -9,7 +10,7 @@ def save(wine):
     sql = "INSERT INTO wines (wine_name, producer_id, stock, net_price, sell_price) VALUES (%s, %s, %s, %s, %s) RETURNING *"
     values = [wine.wine_name, wine.producer.id, wine.stock, wine.net_price, wine.sell_price]
     results = run_sql(sql, values)
-    id = results[0]["id"]
+    id = results[0]['id']
     wine.id = id
     return wine
 
@@ -36,8 +37,6 @@ def select_all():
         wines.append(wine)
     return wines
 
-    (wine_name, producer_id, stock, net_price, sell_price)
-
 
 def select(id):
     wine = None
@@ -52,7 +51,7 @@ def select(id):
 
 
 def update(wine):
-    sql = "UPDATE wines SET (wine_name, producer, producer_id) = (%s, %s, %s, %s, %s) WHERE id = %s"
+    sql = "UPDATE wines SET (wine_name, producer_id, stock, net_price, sell_price) = (%s, %s, %s, %s, %s) WHERE id = %s"
     values = [wine.wine_name, wine.producer.id, wine.stock, wine.net_price, wine.sell_price]
     run_sql(sql, values)
 

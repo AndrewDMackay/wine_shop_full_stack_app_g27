@@ -24,6 +24,7 @@ body {
   .grid-container {
     display: flex;
     flex-wrap: wrap;
+    padding: 0.25em;
   }
 
 
@@ -34,7 +35,7 @@ body {
     min-height: 68px;
     padding: 10px;
     line-height: 18px;
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
   }
   
 

@@ -52,10 +52,9 @@ def select(id):
 
 def update(wine):
     sql = "UPDATE wines SET (wine_name, producer_id, stock, net_price, sell_price) = (%s, %s, %s, %s, %s) WHERE id = %s"
-    values = [wine.wine_name, wine.producer.id, wine.stock, wine.net_price, wine.sell_price]
+    values = [wine.wine_name, wine.producer.id, wine.stock, wine.net_price, wine.sell_price, wine.id]
     run_sql(sql, values)
     
-
 
 # wine_repository, key functions..
 

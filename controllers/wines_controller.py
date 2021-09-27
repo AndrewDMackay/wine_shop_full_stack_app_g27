@@ -74,9 +74,9 @@ def edit_wine(id):
 
 @wines_blueprint.route("/wines/<id>", strict_slashes=False, methods=['POST'])
 def update_wine(id):
-    wine_name = request.form['wine-name']
     producer_id = request.form['producer-id']
     producer = producer_repository.select(producer_id)
+    wine_name = request.form['wine-name']
     stock = request.form['stock']
     net_price = request.form['net-price']
     sell_price = request.form['sell-price']

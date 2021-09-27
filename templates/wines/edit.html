@@ -5,7 +5,7 @@
 <form action="/wines/{{ wine.id }}" method="post">
     <div>
         <label for="producer"><strong>PRODUCER</strong></label>
-        <select id="producer" name="producer_id">
+        <select id="producer" name="producer-id">
         {% for producer in all_producers %}
         <option value="{{ producer.id }}">{{ producer.producer_name }}</option>
         {% endfor %}

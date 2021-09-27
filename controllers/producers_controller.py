@@ -75,7 +75,7 @@ def update_producer(id):
     country = request.form['country']
     region = request.form['region']
     producer_description = request.form['producer-description']
-    producer = Producer(producer_name, country, region, producer_description)
+    producer = Producer(producer_name, country, region, producer_description, id)
     producer_repository.update(producer)
     return redirect('/producers')
 

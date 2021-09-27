@@ -10,6 +10,7 @@ from repositories import wine_repository
 from models.wine import Wine
 from models.producer import Producer
 
+
 wines_blueprint = Blueprint("wines", __name__)
 
 
@@ -79,7 +80,7 @@ def update_wine(id):
     stock = request.form['stock']
     net_price = request.form['net-price']
     sell_price = request.form['sell-price']
-    wine = Wine(wine_name, producer, stock, net_price, sell_price)
+    wine = Wine(wine_name, producer, stock, net_price, sell_price, id)
     wine_repository.update(wine)
     return redirect('/wines')
 

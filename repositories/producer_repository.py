@@ -48,7 +48,7 @@ def select(id):
     
 
 def update(producer):
-    sql = "UPDATE producers SET (producer_name, country, region, active, winemaker) = (%s, %s, %s, %s, %s) WHERE id = %s"
+    sql = "UPDATE producers SET (producer_name, country, region, winemaker, active) = (%s, %s, %s, %s, %s) WHERE id = %s"
     values = [producer.producer_name, producer.country, producer.region, producer.winemaker, producer.active, producer.id]
     run_sql(sql, values)
 

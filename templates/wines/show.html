@@ -21,11 +21,11 @@
             <hr>
             <p>STOCK ALERT</p>
             {% if wine.stock <= 0 %}
-              <p>Out Of Stock [ <i id="icon" class="fa fa-solid fa-exclamation" style="color: hsla(0, 0%, 0%, 0.800)" aria-hidden="true"></i> ]</p>
+              <p>Out Of Stock [ <i id="icon" class="fa fa-solid fa-exclamation" aria-hidden="true"></i> ]</p>
             {% elif wine.stock <= 5 %}
-              <p>Stock Low [ <i id="icon" class="fa fa-solid fa-question" style="color: hsla(0, 0%, 0%, 0.800)" aria-hidden="true"></i> ]</p>
+              <p>Stock Low [ <i id="icon" class="fa fa-solid fa-question" aria-hidden="true"></i> ]</p>
             {% else %}
-              <p>Stock Level Normal [ <i id="icon" class="fa fa-solid fa-check" style="color: hsla(0, 0%, 0%, 0.800)" aria-hidden="true"></i> ] </p>
+              <p>Stock Level Normal [ <i id="icon" class="fa fa-solid fa-check" aria-hidden="true"></i> ] </p>
             {% endif %}
           </p>
           <hr>
@@ -42,7 +42,7 @@
             <div>
                 <p><strong>UPDATE ENTRY</strong></p>
                 <a href="/wines/{{ wine.id }}/edit">
-                    <button class="image-button"><i class="fas fa-edit fa-3x" style="color: hsla(0, 0%, 0%, 0.800)" aria-hidden="true"></i></button>
+                    <button class="image-button"><i class="fas fa-edit fa-3x" aria-hidden="true"></i></button>
                 </a>
             </div>
         </div>

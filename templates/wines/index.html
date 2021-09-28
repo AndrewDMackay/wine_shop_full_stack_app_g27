@@ -11,7 +11,7 @@
         <hr>
         <p>WINE NAME</p>
         <div class="link-name">
-          <a href="/wines/{{ wine.id }}">{{ wine.wine_name }}</a>
+          <p><a href="/wines/{{ wine.id }}">{{ wine.wine_name }}</a> [ <i id="stock-icon" class="fa fa-solid fa-hand-pointer" style="color:black" aria-hidden="true"></i> ] </p>
         </div>
         <hr>
         <p>COUNTRY</p>
@@ -25,9 +25,9 @@
         <hr>
         <p>STOCK ALERT</p>
           {% if wine.stock <= 0 %}
-            <p>Out Of Stock.. [ <i id="stock-icon" class="fa fa-solid fa-exclamation" style="color:black" aria-hidden="true"></i> ]</p>
+            <p>Out Of Stock [ <i id="stock-icon" class="fa fa-solid fa-exclamation" style="color:black" aria-hidden="true"></i> ]</p>
           {% elif wine.stock <= 5 %}
-            <p>Stock Low.. [ <i id="stock-icon" class="fa fa-solid fa-question" style="color:black" aria-hidden="true"></i> ]</p>
+            <p>Stock Low [ <i id="stock-icon" class="fa fa-solid fa-question" style="color:black" aria-hidden="true"></i> ]</p>
           {% else %}
             <p>Stock Level Normal [ <i id="stock-icon" class="fa fa-solid fa-check" style="color:black" aria-hidden="true"></i> ] </p>
           {% endif %}

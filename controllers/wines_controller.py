@@ -18,7 +18,7 @@ wines_blueprint = Blueprint("wines", __name__)
 
 
 # Index..
-# GET '/wines/', finalised..
+# GET '/wines/', [ Finalised ]
 
 @wines_blueprint.route("/wines", strict_slashes=False, methods=['GET'])
 def wines():
@@ -28,7 +28,7 @@ def wines():
 
 # NEW
 # GET '/wines/new'
-# Returns an HTML form to the browser, finalised..
+# Returns an HTML form to the browser, [ Finalised ]
 
 @wines_blueprint.route("/wines/new", strict_slashes=False, methods=['GET'])
 def new_wines():
@@ -38,7 +38,7 @@ def new_wines():
 
 # CREATE
 # POST '/wines/'
-# Receives the data from the form to insert into the database, finalised..
+# Receives the data from the form to insert into the database, [ Finalised ]
 
 @wines_blueprint.route("/wines", strict_slashes=False, methods=['POST'])
 def create_wine():
@@ -54,7 +54,7 @@ def create_wine():
 
 
 # # SHOW
-# # GET '/wines/<id>', finalised..
+# # GET '/wines/<id>', [ Finalised ]
 
 @wines_blueprint.route("/wines/<id>", strict_slashes=False, methods=['GET'])
 def show_wine(id):
@@ -63,7 +63,7 @@ def show_wine(id):
 
 
 # EDIT
-# GET '/wines/<id>/edit', finalised..
+# GET '/wines/<id>/edit', [ Finalised ]
 
 @wines_blueprint.route("/wines/<id>/edit", strict_slashes=False, methods=['GET'])
 def edit_wine(id):
@@ -89,7 +89,7 @@ def update_wine(id):
 
 
 # DELETE
-# DELETE '/wines/<id>', finalised..
+# DELETE '/wines/<id>', [ Finalised ]
 
 @wines_blueprint.route("/wines/<id>/delete", strict_slashes=False, methods=['POST'])
 def delete_wine(id):
@@ -100,9 +100,9 @@ def delete_wine(id):
 # FILTER
 # FILTER '/wines/filter/<id>', draft..
 
-# @wines_blueprint.route('/wines/filter/<id>', strict_slashes=False, methods=['GET'])
-# def filter_products_by_producer(id):
-#     id=id
-#     wines = wine_repository.select_all()
-#     return render_template("/products/filters.html", wines = wines, id=id)
+@wines_blueprint.route('/wines/filter/<id>', strict_slashes=False, methods=['GET'])
+def filter_products_by_producer(id):
+    id = id
+    wines = wine_repository.select_all()
+    return render_template("/products/filters.html", wines = wines, id=id)
 

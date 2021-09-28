@@ -11,31 +11,31 @@ import repositories.producer_repository as producer_repository
 wine_repository.delete_all()
 producer_repository.delete_all()
 
-producer1 = Producer("Radikon", "Italy", "Friuli-Venezia Giulia", "Saša Radikon")
+producer1 = Producer("Radikon", "Italy", "Friuli-Venezia Giulia", "Saša Radikon", True)
 producer_repository.save(producer1)
 
-producer2 = Producer("Pheasant's Tears", "Georgia", "Kakheti", "Gela Patalashvili")
+producer2 = Producer("Pheasant's Tears", "Georgia", "Kakheti", "Gela Patalashvili", True)
 producer_repository.save(producer2)
 
-producer3 = Producer("Sepp Muster", "Austria", "Susteiermark", "Sepp, and Maria Muster")
+producer3 = Producer("Sepp Muster", "Austria", "Susteiermark", "Sepp, and Maria Muster", True)
 producer_repository.save(producer3)
 
-producer4 = Producer("Gravner", "Italy-Slovenia Border", "Colio, Brda", "Josko Gravner")
+producer4 = Producer("Gravner", "Italy-Slovenia Border", "Colio, Brda", "Josko Gravner", True)
 producer_repository.save(producer4)
 
-producer5 = Producer("Domaine Zind Humbrecht", "France", "Alsace, Haut-Rihn", "Olivier Humbrecht, MW")
+producer5 = Producer("Domaine Zind Humbrecht", "France", "Alsace, Haut-Rihn", "Olivier Humbrecht, MW", True)
 producer_repository.save(producer5)
 
-producer6 = Producer("Domaine Josmeyer", "France", "Alsace, Wintzenheim", "Jean Meyer")
+producer6 = Producer("Domaine Josmeyer", "France", "Alsace, Wintzenheim", "Jean Meyer", True)
 producer_repository.save(producer6)
 
-producer7 = Producer("Emidio Pepe", "Italy", "Abbruzo", "Sofia Pepe")
+producer7 = Producer("Emidio Pepe", "Italy", "Abbruzo", "Sofia Pepe", True)
 producer_repository.save(producer7)
 
-producer8 = Producer("Gut Oggau", "Austria", "Burgenland", "Stephanie, and Eduard Tscheppe")
+producer8 = Producer("Gut Oggau", "Austria", "Burgenland", "Stephanie, and Eduard Tscheppe", True)
 producer_repository.save(producer8)
 
-producer9 = Producer("Dario Prinčič", "Italy", "Friuli-Venezia Giulia", "Dario Prinčič")
+producer9 = Producer("Dario Prinčič", "Italy", "Friuli-Venezia Giulia", "Dario Prinčič", True)
 producer_repository.save(producer9)
 
 producer_repository.select_all()

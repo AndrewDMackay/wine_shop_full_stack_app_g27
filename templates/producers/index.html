@@ -20,6 +20,9 @@
             <p>WINEMAKER</p>
             <p>{{ producer.winemaker }}</p>
             <hr>
+            <p>ACTIVE</p>
+            <p>{{ producer.active }}</p>
+            <hr>
             <p><strong>DELETE ENTRY</strong></p>
           <div class="buttons">
             <form class="delete-form" action="/producers/{{producer.id}}/delete" method="POST">

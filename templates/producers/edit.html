@@ -2,30 +2,37 @@
 {% extends "base.html" %}
 {% block content %}
 
-<form action="/producers/{{ producer.id }}" method="post">
-    <div>
-        <label for="producer-name"><strong>PRODUCER NAME</strong></label>
-        <input type="text" id="producer-name" name="producer-name" placeholder="PRODUCER NAME.." required autofocus>
+<div class="grid-container">
+    <div class="grid-item">
+      <div class="content">
+            <form action="/producers/{{ producer.id }}" method="post">
+                <div>
+                    <label for="producer-name"><strong>PRODUCER NAME</strong></label>
+                    <input type="text" id="producer-name" name="producer-name" placeholder="PRODUCER NAME.." required autofocus>
+                </div>
+                <div>
+                    <label for="country"><strong>COUNTRY</strong></label>
+                    <input type="text" id="country" name="country" placeholder="COUNTRY..">
+                </div>
+                <div>
+                    <label for="region"><strong>REGION</strong></label>
+                    <input type="text" id="region" name="region" placeholder="REGION..">
+                </div>
+                <div>
+                    <label for="winemaker"><strong>WINEMAKER</strong></label>
+                    <input type="text" id="winemaker" name="winemaker" placeholder="WINEMAKER..">
+                <div class="radio-button">
+                    <label for="active"></label>
+                    <p><strong>ACTIVE</strong><input type="radio" name="active" id="active" value="true"></p>
+                    <p><strong>INACTIVE</strong><input type="radio" name="active" id="inactive" value="false"></p>
+                </div>
+                </div>
+                    <p><strong>UPDATE</strong></p>
+                    <button class="image-button" type="submit"><i class="fas fa-edit fa-3x"  aria-hidden="true"></i></button>
+                </div>
+            </form>
+        </div>
     </div>
-    <div>
-        <label for="country"><strong>COUNTRY</strong></label>
-        <input type="text" id="country" name="country" placeholder="COUNTRY..">
-    </div>
-    <div>
-        <label for="region"><strong>REGION</strong></label>
-        <input type="text" id="region" name="region" placeholder="REGION..">
-    </div>
-    <div>
-        <label for="winemaker"><strong>WINEMAKER</strong></label>
-        <input type="text" id="winemaker" name="winemaker" placeholder="WINEMAKER..">
-    <div class="radio-button">
-        <label for="active"></label>
-        <p><strong>ACTIVE</strong><input type="radio" name="active" id="active" value="true"></p>
-        <p><strong>INACTIVE</strong><input type="radio" name="active" id="inactive" value="false"></p>
-    </div>
-    </div>
-        <p><strong>UPDATE</strong></p>
-        <button class="image-button" type="submit"><i class="fas fa-edit fa-3x"  aria-hidden="true"></i></button>
-    </div>
-</form>
+</div>
+
 {% endblock %}

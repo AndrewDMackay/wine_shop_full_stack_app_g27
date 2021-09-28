@@ -2,31 +2,35 @@
 {% extends 'base.html' %}
 {% block content  %}
 
-    <div class="item">
-        <div class="content">
-            <p>PRODUCER</p>
-            <p><strong>{{ producer.producer_name }}</strong></p>
-            <hr>
-            <p>COUNTRY</p>
-            <p>{{ producer.country }}</p>
-            <hr>
-            <p>REGION</p>
-            <p>{{ producer.region }}</p>
-            <hr>
-            <p>WINEMAKER</p>
-            <p>{{ producer.winemaker }}</p>
-            <hr>
-            <p>ACTIVE</p>
-            <p>{{ producer.active }}</p>
-            <hr>
-            <div>
-                <p><strong>UPDATE ENTRY</strong></p>
-                <a href="/producers/{{ producer.id }}/edit">
-                    <button class="image-button"><i class="fas fa-edit fa-3x" aria-hidden="true"></i></button>
-                </a>
+<div class="grid-container">
+    <div class="grid-item">
+      <div class="content">
+            <div class="content">
+                <p>PRODUCER</p>
+                <p><strong>{{ producer.producer_name }}</strong></p>
+                <hr>
+                <p>COUNTRY</p>
+                <p>{{ producer.country }}</p>
+                <hr>
+                <p>REGION</p>
+                <p>{{ producer.region }}</p>
+                <hr>
+                <p>WINEMAKER</p>
+                <p>{{ producer.winemaker }}</p>
+                <hr>
+                <p>ACTIVE</p>
+                <p>{{ producer.active }}</p>
+                <hr>
+                <div>
+                    <p><strong>UPDATE ENTRY</strong></p>
+                    <a href="/producers/{{ producer.id }}/edit">
+                        <button class="image-button"><i class="fas fa-edit fa-3x" aria-hidden="true"></i></button>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
+</div>
 
 {% endblock  %}
 

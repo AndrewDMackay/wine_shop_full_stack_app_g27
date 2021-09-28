@@ -2,8 +2,9 @@
 {% extends 'base.html' %}
 {% block content  %}
 
-    <div class="item">
-        <div class="content">
+<div class="grid-container">
+    <div class="grid-item">
+      <div class="content">
             <p>WINE NAME</p>
             <p><strong>{{ wine.wine_name }}</strong></p>
             <hr>
@@ -36,7 +37,6 @@
             <p>{{ wine.sell_price }}</p>
             <hr>
             <p>PERCENTAGE MARGIN</p>
-            <p>PERCENTAGE MARGIN</p>
                 {{ wine.calculate_margin() }}%
             <hr>
             <div>
@@ -47,6 +47,7 @@
             </div>
         </div>
     </div>
+</div>
 
 {% endblock  %}
 

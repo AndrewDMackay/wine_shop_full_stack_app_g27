@@ -2,37 +2,43 @@
 {% extends "base.html" %}
 {% block content %}
 
-<form action="/wines" method="post">
-    <div>
-        <label for="producer"><strong>PRODUCER</strong></label>
-        <select id="producer" name="producer_id">
-        {% for producer in all_producers %}
-        {% if producer.active == True %}
-        <option value="{{ producer.id }}">{{ producer.producer_name }}</option>
-        {% endif %}
-        {% endfor %}
-        </select><br>
+<div class="grid-container">
+    <div class="grid-item">
+      <div class="content">
+            <form action="/wines" method="post">
+                <div>
+                    <label for="producer"><strong>PRODUCER</strong></label>
+                    <select id="producer" name="producer_id">
+                    {% for producer in all_producers %}
+                    {% if producer.active == True %}
+                    <option value="{{ producer.id }}">{{ producer.producer_name }}</option>
+                    {% endif %}
+                    {% endfor %}
+                    </select><br>
+                </div>
+                <div>
+                    <label for="wine-name"><strong>WINE NAME</strong></label>
+                    <input type="text" id="wine-name" name="wine-name" placeholder="WINE NAME.." required autofocus>
+                </div>
+                <div>
+                    <label for="stock"><strong>STOCK</strong></label>
+                    <input type="number" id="stock" name="stock" placeholder="STOCK.." required autofocus>
+                </div>
+                <div>
+                    <label for="net-price"><strong>NET PRICE</strong></label>
+                    <input type="number" id="net-price" name="net-price" placeholder="NET PRICE.." required autofocus>
+                </div>
+                <div>
+                    <label for="sell-price"><strong>SELL PRICE</strong></label>
+                    <input type="number" id="sell-price" name="sell-price" placeholder="SELL PRICE.." required autofocus>
+                </div>
+                <div>
+                    <p><strong>CREATE NEW</strong></p>
+                    <button class="image-button" type="submit"><i class="fas fa-edit fa-3x" aria-hidden="true"></i></button>
+                </div>
+            </form>
+        </div>
     </div>
-    <div>
-        <label for="wine-name"><strong>WINE NAME</strong></label>
-        <input type="text" id="wine-name" name="wine-name" placeholder="WINE NAME.." required autofocus>
-    </div>
-    <div>
-        <label for="stock"><strong>STOCK</strong></label>
-        <input type="number" id="stock" name="stock" placeholder="STOCK.." required autofocus>
-    </div>
-    <div>
-        <label for="net-price"><strong>NET PRICE</strong></label>
-        <input type="number" id="net-price" name="net-price" placeholder="NET PRICE.." required autofocus>
-    </div>
-    <div>
-        <label for="sell-price"><strong>SELL PRICE</strong></label>
-        <input type="number" id="sell-price" name="sell-price" placeholder="SELL PRICE.." required autofocus>
-    </div>
-    <div>
-        <p><strong>CREATE NEW</strong></p>
-        <button class="image-button" type="submit"><i class="fas fa-edit fa-3x" aria-hidden="true"></i></button>
-    </div>
-</form>
+</div>
 
 {% endblock %}

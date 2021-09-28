@@ -54,10 +54,17 @@ if __name__ == '__main__':
 #  Calculate the markup on items in the store, and display it in the inventory..
 
 #  [ Finalised ] 
+
+#  Mark manufacturers as active/deactivated. Deactivated manufacturers will not appear when creating new products..
+
+#  [ Finalised ] 
     
 #  Filter the inventory list by manufacturer. For example, provide an option to view all books in stock by a certain author..
 
-#  Categorise your items. Books might be categorised by genre (crime, horror, romance...) and cars might be categorised by type (SUV, coupé, hatchback...). 
+#  [ Finalised ] 
+
+#  Categorise your items. Books might be categorised by genre (crime, horror, romance...)
+#  Cars might be categorised by type (SUV, coupé, hatchback...). 
 #  Provide an option to filter the inventory list by these categories..
 
-#  Mark manufacturers as active/deactivated. Deactivated manufacturers will not appear when creating new products..
+

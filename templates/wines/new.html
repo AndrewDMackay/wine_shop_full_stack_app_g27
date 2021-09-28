@@ -7,7 +7,9 @@
         <label for="producer"><strong>PRODUCER</strong></label>
         <select id="producer" name="producer_id">
         {% for producer in all_producers %}
+        {% if producer.active == True %}
         <option value="{{ producer.id }}">{{ producer.producer_name }}</option>
+        {% endif %}
         {% endfor %}
         </select><br>
     </div>

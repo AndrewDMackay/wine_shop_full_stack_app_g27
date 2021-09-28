@@ -53,17 +53,3 @@ def update(producer):
     run_sql(sql, values)
 
 
-# producer_repository, key functions..
-
-# 	def save():
-
-# 	def delete_all():
-
-# 	def delete(id):
-
-# 	def select_all():
-
-# 	def select(id):
-
-# 	def update():
-

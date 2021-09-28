@@ -2,10 +2,20 @@
 {% extends "base.html" %}
 {% block content %}
 
+<div class="dropdown">
+  <button class="drop-button">FILTER</button>
+  <div class="dropdown-content">
+    {% for producer in all_producers %}
+    <a href="/wines/filter/{{ producer.producer_name }}">{{ producer.producer_name }}</a>
+    {% endfor %}
+  </div>
+</div>
+
 {% for wine in all_wines %}
   <div class="grid-container">
     <div class="grid-item">
       <div class="content">
+    </div>
         <p>PRODUCER</p>
         <p>{{ wine.producer.producer_name }}</p>
         <hr>

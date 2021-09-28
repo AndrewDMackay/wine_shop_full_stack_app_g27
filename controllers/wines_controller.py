@@ -23,7 +23,8 @@ wines_blueprint = Blueprint("wines", __name__)
 @wines_blueprint.route("/wines", strict_slashes=False, methods=['GET'])
 def wines():
     wines = wine_repository.select_all()
-    return render_template('wines/index.html', all_wines = wines)
+    producers = producer_repository.select_all()
+    return render_template('wines/index.html', all_wines = wines, all_producers = producers)
 
 
 # NEW
@@ -101,8 +102,8 @@ def delete_wine(id):
 # FILTER '/wines/filter/<id>', draft..
 
 @wines_blueprint.route('/wines/filter/<id>', strict_slashes=False, methods=['GET'])
-def filter_products_by_producer(id):
-    id = id
+def filter_products_by_producer(filter):
+    filter = filter
     wines = wine_repository.select_all()
-    return render_template("/products/filters.html", wines = wines, id=id)
+    return render_template("/wines/filter.html", all_wines = wines, filter = filter)
 

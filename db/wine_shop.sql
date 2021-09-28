@@ -14,8 +14,8 @@ CREATE TABLE wines (
   id SERIAL PRIMARY KEY,
   wine_name VARCHAR(255),
   stock INT,
-  net_price DECIMAL,
-  sell_price DECIMAL,
+  net_price FLOAT,
+  sell_price FLOAT,
   producer_id INT REFERENCES producers(id)
 );
 

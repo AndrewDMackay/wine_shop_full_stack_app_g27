@@ -5,7 +5,18 @@ body {
     color: hsla(0, 0%, 0%, 0.800);
   }
   
+
+  #Home {
+    background: url('/static/images/unsplash_background_wine.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: whitesmoke;
+    font-size: 30px;
+    font-weight: bold;
+
+  }
   
+
   a {
     text-decoration: none;
     color: hsla(0, 0%, 0%, 0.800);

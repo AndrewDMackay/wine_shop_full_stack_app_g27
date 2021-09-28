@@ -40,11 +40,7 @@
         <p>{{ wine.sell_price }}</p>
         <hr>
         <p>PERCENTAGE MARGIN</p>
-        {% if wine.net_price != None %}
-          <p>40% GPM [ <i id="stock-icon" class="fa fa-solid fa-check" style="color:black" aria-hidden="true"></i> ] </p>
-        {% else %}
-          <p>No Pricing Loaded.. [ <i id="stock-icon" class="fa fa-solid fa-exclamation" style="color:black" aria-hidden="true"></i> ]</p>
-        {% endif %}
+          {{ wine.calculate_margin() }}%
         <hr>
         <p><strong>DELETE ENTRY</strong></p>
           <div class="buttons">

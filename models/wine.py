@@ -21,10 +21,10 @@ class Wine:
             return "Stock Level Normal"
 
 
-    def calculate_margin(wine):
-        inc_vat_price = wine.net_price * 1.2
-        percentage_margin = (wine.sell_price - inc_vat_price) / wine.sell_price
-        return (f"{percentage_margin}%")
+    def calculate_margin(self):
+        inc_vat_price = self.net_price * 1.2
+        percentage_margin = ((self.sell_price - inc_vat_price) / self.sell_price) * 100
+        return round(percentage_margin, 2)
       
 
 # class Wine: properties, and priorities..

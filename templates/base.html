@@ -12,24 +12,36 @@
 <body>
   <header>
     <nav>
-      <ul class="menu">
-        <li><a href="/">HOME</a></li>
-        <li><a href="/wines">WINES</a></li>
-        <li><a href="/wines/new">NEW WINE</a></li>
-        <li><a href="/producers">PRODUCERS</a></li>
-        <li><a href="/producers/new">NEW PRODUCER</a></li>
-      </ul>
+      <div class="menu">
+        <div class="menu-content">
+          <a href="/">HOME</a>
+          <a href="/wines">WINES</a>
+          <a href="/wines/new">NEW WINE</a>
+          <a href="/producers">PRODUCERS</a>
+          <a href="/producers/new">NEW PRODUCER</a>
+          <div class="dropdown">
+            <button class="drop-button"><strong>FILTER</strong>
+              <i id="icon" class="fa fa-caret-down" style="color:white" aria-hidden="true"></i>
+            </button>
+              <div class="dropdown-content">
+                <i class="fa fa-caret-down"></i>
+              {% for producer in all_producers %}
+              <a href="/wines/filter/{{ producer.producer_name }}">{{ producer.producer_name }}</a>
+              {% endfor %}
+              </div>
+          </div>
+        </div>
       </div>
     </nav>
   </header>
-  <div class="dropdown">
+  <!-- <div class="dropdown">
     <button class="drop-button"><strong>FILTER</strong></button>
       <div class="dropdown-content">
       {% for producer in all_producers %}
       <a href="/wines/filter/{{ producer.producer_name }}">{{ producer.producer_name }}</a>
       {% endfor %}
       </div>
-    </div>
+    </div> -->
   <div class="base-container">
     {% block content %}
     {% endblock %}

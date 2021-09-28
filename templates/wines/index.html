@@ -3,7 +3,7 @@
 {% block content %}
 
 <div class="dropdown">
-  <button class="drop-button">FILTER</button>
+  <button class="drop-button"><strong>FILTER</strong></button>
   <div class="dropdown-content">
     {% for producer in all_producers %}
     <a href="/wines/filter/{{ producer.producer_name }}">{{ producer.producer_name }}</a>

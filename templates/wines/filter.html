@@ -2,8 +2,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-{% for wine in wines %}
-{% if wine.producer.producer_name == filter %}
+{% for wine in filtered_list %}
 <div class="grid-container">
     <div class="grid-item">
       <div class="content">
@@ -52,7 +51,6 @@
       </div>
     </div>
   </div>
-{% endif %}
 {% endfor %}
 {% endblock %}
 

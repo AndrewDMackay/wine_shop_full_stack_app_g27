@@ -1,6 +1,6 @@
 
-
 import re
+import pdb
 
 from controllers.producers_controller import producers
 
@@ -101,9 +101,14 @@ def delete_wine(id):
 # FILTER
 # FILTER '/wines/filter/<id>', draft..
 
-@wines_blueprint.route('/wines/filter/<id>', strict_slashes=False, methods=['GET'])
-def filter_products_by_producer(filter):
-    filter = filter
+@wines_blueprint.route('/wines/filter/<filter>', strict_slashes=False, methods=['GET'])
+def filter(filter):
+    filtered_list = []
     wines = wine_repository.select_all()
-    return render_template("/wines/filter.html", all_wines = wines, filter = filter)
+
+    for wine in wines:
+        if wine.producer.producer_name == filter:
+            filtered_list.append(wine)
+
+    return render_template("/wines/filter.html", all_wines = wines, filtered_list = filtered_list)
 

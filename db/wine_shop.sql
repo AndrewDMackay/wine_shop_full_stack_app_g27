@@ -8,7 +8,7 @@ CREATE TABLE producers (
   country VARCHAR(255),
   region VARCHAR(255),
   winemaker VARCHAR(255),
-  active INT
+  active BOOLEAN
 );
 
 CREATE TABLE wines (

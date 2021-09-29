@@ -4,6 +4,12 @@ from flask import Flask, render_template
 from controllers.wines_controller import wines_blueprint
 from controllers.producers_controller import producers_blueprint
 
+from repositories import producer_repository
+from repositories import wine_repository
+
+from models.wine import Wine
+from models.producer import Producer
+
 app = Flask(__name__)
 
 app.register_blueprint(wines_blueprint)
@@ -11,7 +17,10 @@ app.register_blueprint(producers_blueprint)
 
 @app.route('/')
 def home():
-    return render_template('index.html')
+    producers = producer_repository.select_all()
+    wines = wine_repository.select_all()
+
+    return render_template('index.html', all_wines = wines, all_producers = producers)
 
 if __name__ == '__main__':
     app.run(debug=True)

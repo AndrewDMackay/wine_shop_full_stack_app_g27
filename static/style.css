@@ -16,19 +16,35 @@ body {
   
   /* Home Page.. */
 
-  #Home {
+  #home-container {
+    padding: 0.28vw;
+    min-height: 48.8vw;
+    min-width: 50vww;
+    border: 0.1vw solid #B2B2B2;
     background: url('/static/images/unsplash_background_wine_medium.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
+    align-content: center;
+  }
+
+
+  #home-title {
     color: whitesmoke;
-    font-size: 12vw;
+    font-size: 14.5vw;
     font-weight: bold;
     padding: 1.5vw;
   }
 
 
   #home-icon{
-    font-size: 25.0vw;
+    font-size: 15.0vw;
+    color: whitesmoke;
+    padding: 1.5vw;
+  }
+
+
+  #copyright-icon{
+    font-size: 5.0vw;
     color: whitesmoke;
     padding: 1.5vw;
   }

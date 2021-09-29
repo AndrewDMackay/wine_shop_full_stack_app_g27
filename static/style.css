@@ -1,10 +1,6 @@
 
 /* Main body.. */
 
-/* html {
-    background-color:#262625;
-  } */
-
 body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -21,7 +17,6 @@ body {
     min-height: 48.8vw;
     width: 80vw;
     border: 0.1vw solid #B2B2B2;
-    /* border-radius: 0.4vw; */
     background: url('/static/images/unsplash_background_wine_medium.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -30,7 +25,7 @@ body {
 
   #home-title {
     color: whitesmoke;
-    font-size: 14.5vw;
+    font-size: 14.0vw;
     font-weight: bold;
     padding: 1.0vw;
   }
@@ -39,13 +34,12 @@ body {
   #home-icon{
     font-size: 10.5vw;
     color: whitesmoke;
-    padding: 1.5vw;
     padding-left: 35vw;
   }
 
 
   #copyright-icon{
-    font-size: 2.0vw;
+    font-size: 1.0vw;
     color: whitesmoke;
     padding-left: 40vw;
   }

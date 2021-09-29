@@ -38,7 +38,7 @@ body {
 
   #home-title {
     color: whitesmoke;
-    font-size: 14.0vw;
+    font-size: 13.0vw;
     font-weight: bold;
     padding: 1.0vw;
   }
@@ -303,4 +303,5 @@ body {
 .dropdown:hover .dropdown-content {
   display: block;
 }
+
 

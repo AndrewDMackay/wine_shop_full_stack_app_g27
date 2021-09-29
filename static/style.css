@@ -12,6 +12,7 @@ body {
     color: #DEDEDE; 
   }
   
+  
   /* Home Page.. */
 
   /* #Home {
@@ -54,27 +55,32 @@ body {
   /* Main base container.. */
 
   .base-container {
-    background-color: #1E1E1E; 
+    /* background-color: #1E1E1E;  */
     margin-left: 9.0vw;
-    margin-right: 10.4vw;
+    margin-right: 9.7vw;
     display: flex;
     flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-evenly;
   }
 
   /* Grid layout for index, and filter pages, instances, and contents.. */
 
   .grid-container {
+    background-color: #1E1E1E; 
     display: flex;
     flex-wrap: wrap;
     padding: 0.28vw;
+    min-height: 48.8vw;
+    min-width: 50vww;
+    border: 0.1vw solid #B2B2B2;
   }
 
 
   .grid-item {
     border: 0.125vw solid whitesmoke;
-    font-size: 0.8vw;
     width: 24.30vw;
-    min-height: 30vw;
+    min-height: 48.8vw;
     padding: 0.7vw;
     line-height: 1.2vw;
   }
@@ -82,21 +88,12 @@ body {
  /* Styling for all content, and tex on all pages, forms, etc, etc.. */
 
   .content {
+    font-size: 0.8vw;
     font-weight: bold;
     margin-left: 1.0vw;
     margin-top: 1.0vw;
     margin-bottom: 1.0vw;
     margin-right: 1.0vw;
-  }
-
-
-  .item {
-    border: 0.125vw solid whitesmoke;
-    font-size: 0.8vw;
-    width: 24.30vw;
-    min-height: 30vw;
-    padding: 0.7vw;
-    line-height: 1.2vw;
   }
 
 
@@ -121,47 +118,11 @@ body {
     font-size: 0.8vw;
     width : 20.0vw;
     padding: 0.8vw;
-    margin: 2.25vw;
+    margin: 1.0vw;
     box-sizing: border-box;
     color: #262625;
   }
 
-  /* Forms, individual styling for each page.. */
-
-  .wine-new {
-    border: 0.125vw solid whitesmoke;
-    font-size: 0.8vw;
-    width: 65vw;
-    min-height: 49vw;
-    padding: 0.7vw;
-    line-height: 1.2vw;
-  }
-
-
-   /* #wine-edit {
-
-  }
-
-  
-  #wine-show {
-
-  }
-
-
-  #producer-new {
-
-  }
-
-
-   #producer-edit {
-
-  }
-
-  
-  #producer-show {
-
-  } */
-  
 
  /* Icons, and buttons with images.. */
 

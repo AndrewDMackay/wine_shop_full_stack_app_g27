@@ -5,9 +5,9 @@
 <div class="grid-container">
     <div class="grid-item">
       <div class="content">
-            <div id="wine-edit">
             <form action="/wines/{{ wine.id }}" method="post">
                 <div>
+                    <i id="top-icon" class="fa fa-solid fa-wine-bottle" aria-hidden="true"></i><br>
                     <label for="producer"><strong>PRODUCER</strong></label>
                     <select id="producer" name="producer-id">
                     {% for producer in all_producers %}
@@ -36,7 +36,6 @@
                     <button class="image-button" type="submit"><i class="fas fa-edit fa-3x" aria-hidden="true"></i></button>
                 </div>
             </form>
-            </div>  
         </div>
     </div>
 </div>

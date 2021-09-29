@@ -14,17 +14,17 @@ body {
   }
   
   
-  /* Home Page.. */
+  /* Home page, containers, styling, and icons.. */
 
   #home-container {
     padding: 0.28vw;
     min-height: 48.8vw;
-    min-width: 50vww;
+    width: 80vw;
     border: 0.1vw solid #B2B2B2;
+    /* border-radius: 0.4vw; */
     background: url('/static/images/unsplash_background_wine_medium.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
-    align-content: center;
   }
 
 
@@ -32,21 +32,22 @@ body {
     color: whitesmoke;
     font-size: 14.5vw;
     font-weight: bold;
-    padding: 1.5vw;
+    padding: 1.0vw;
   }
 
 
   #home-icon{
-    font-size: 15.0vw;
+    font-size: 10.5vw;
     color: whitesmoke;
     padding: 1.5vw;
+    padding-left: 35vw;
   }
 
 
   #copyright-icon{
-    font-size: 5.0vw;
+    font-size: 2.0vw;
     color: whitesmoke;
-    padding: 1.5vw;
+    padding-left: 40vw;
   }
 
 
@@ -81,7 +82,6 @@ body {
   /* Main base container.. */
 
   .base-container {
-    /* background-color: #1E1E1E;  */
     margin-left: 9.0vw;
     margin-right: 9.7vw;
     display: flex;
@@ -193,7 +193,7 @@ body {
   }
   
 
-  /* Radio buttons for active, boolean input for forms.. */
+/* Radio buttons for active, boolean input for forms.. */
 
 
 

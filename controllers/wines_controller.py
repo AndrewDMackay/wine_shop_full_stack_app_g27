@@ -105,10 +105,11 @@ def delete_wine(id):
 def filter(filter):
     filtered_list = []
     wines = wine_repository.select_all()
+    producers = producer_repository.select_all()
 
     for wine in wines:
         if wine.producer.producer_name == filter:
             filtered_list.append(wine)
 
-    return render_template("/wines/filter.html", all_wines = wines, filtered_list = filtered_list)
+    return render_template("/wines/filter.html", all_wines = wines, filtered_list = filtered_list, all_producers = producers)
 

@@ -125,6 +125,42 @@ body {
     box-sizing: border-box;
     color: #262625;
   }
+
+  /* Forms, individual styling for each page.. */
+
+  .wine-new {
+    border: 0.125vw solid whitesmoke;
+    font-size: 0.8vw;
+    width: 24.30vw;
+    min-height: 50vw;
+    padding: 0.7vw;
+    line-height: 1.2vw;
+  }
+
+
+   /* #wine-edit {
+
+  }
+
+  
+  #wine-show {
+
+  }
+
+
+  #producer-new {
+
+  }
+
+
+   #producer-edit {
+
+  }
+
+  
+  #producer-show {
+
+  } */
   
 
  /* Icons, and buttons with images.. */
@@ -200,6 +236,7 @@ input[type='radio']:checked:after {
 /* New menu bar, implements drop down menu for filter.. */
 
 .menu {
+  border: 0.1vw solid #060606;
   overflow: hidden;
   margin: 0vw;
   background-color: black;

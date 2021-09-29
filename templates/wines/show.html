@@ -5,45 +5,47 @@
 <div class="grid-container">
     <div class="grid-item">
       <div class="content">
-            <p>WINE NAME</p>
-            <p><strong>{{ wine.wine_name }}</strong></p>
+            <div id="wine-show">
+                <p>WINE NAME</p>
+                <p><strong>{{ wine.wine_name }}</strong></p>
+                <hr>
+                <p>PRODUCER</p>
+                <p>{{ wine.producer.producer_name }}</p>
+                <hr>
+                <p>COUNTRY</p>
+                <p>{{ wine.producer.country }}</p>
+                <hr>
+                <p>REGION</p>
+                <p>{{ wine.producer.region }}</p>
+                <hr>
+                <p>STOCK BOTTLES</p>
+                <p>{{ wine.stock }}</p>
+                <hr>
+                <p>STOCK ALERT</p>
+                {% if wine.stock <= 0 %}
+                <p>Out Of Stock [ <i id="icon" class="fa fa-solid fa-exclamation" aria-hidden="true"></i> ]</p>
+                {% elif wine.stock <= 5 %}
+                <p>Stock Low [ <i id="icon" class="fa fa-solid fa-question" aria-hidden="true"></i> ]</p>
+                {% else %}
+                <p>Stock Level Normal [ <i id="icon" class="fa fa-solid fa-check" aria-hidden="true"></i> ] </p>
+                {% endif %}
+            </p>
             <hr>
-            <p>PRODUCER</p>
-            <p>{{ wine.producer.producer_name }}</p>
-            <hr>
-            <p>COUNTRY</p>
-            <p>{{ wine.producer.country }}</p>
-            <hr>
-            <p>REGION</p>
-            <p>{{ wine.producer.region }}</p>
-            <hr>
-            <p>STOCK BOTTLES</p>
-            <p>{{ wine.stock }}</p>
-            <hr>
-            <p>STOCK ALERT</p>
-            {% if wine.stock <= 0 %}
-              <p>Out Of Stock [ <i id="icon" class="fa fa-solid fa-exclamation" aria-hidden="true"></i> ]</p>
-            {% elif wine.stock <= 5 %}
-              <p>Stock Low [ <i id="icon" class="fa fa-solid fa-question" aria-hidden="true"></i> ]</p>
-            {% else %}
-              <p>Stock Level Normal [ <i id="icon" class="fa fa-solid fa-check" aria-hidden="true"></i> ] </p>
-            {% endif %}
-          </p>
-          <hr>
-            <p>NET PRICE</p>
-            <p>{{ wine.net_price }}</p>
-            <hr>
-            <p>SELL PRICE</p>
-            <p>{{ wine.sell_price }}</p>
-            <hr>
-            <p>PERCENTAGE MARGIN</p>
-                {{ wine.calculate_margin() }}%
-            <hr>
-            <div>
-                <p><strong>UPDATE ENTRY</strong></p>
-                <a href="/wines/{{ wine.id }}/edit">
-                    <button class="image-button"><i class="fas fa-edit fa-3x" aria-hidden="true"></i></button>
-                </a>
+                <p>NET PRICE</p>
+                <p>{{ wine.net_price }}</p>
+                <hr>
+                <p>SELL PRICE</p>
+                <p>{{ wine.sell_price }}</p>
+                <hr>
+                <p>PERCENTAGE MARGIN</p>
+                    {{ wine.calculate_margin() }}%
+                <hr>
+                <div>
+                    <p><strong>UPDATE ENTRY</strong></p>
+                    <a href="/wines/{{ wine.id }}/edit">
+                        <button class="image-button"><i class="fas fa-edit fa-3x" aria-hidden="true"></i></button>
+                    </a>
+                </div>
             </div>
         </div>
     </div>

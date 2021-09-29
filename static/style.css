@@ -189,7 +189,38 @@ body {
 
 /* Radio buttons for active, boolean input for forms.. */
 
+  input[type="radio"] {
+  visibility: hidden;
+  }
 
+
+.radio-button input[type="radio"]:after {
+  width: 1vw;
+  height: 1.0vw;
+  border-radius: 1.0vw;
+  top: -0.5vw;
+  left: -0.5vw;
+  position: relative;
+  background-color: #1E1E1E;
+  content: '';
+  display: inline-block;
+  visibility: visible;
+  border: 0.1vw solid white;
+}
+
+.radio-button input[type="radio"]:checked:after {
+  width: 1.0vw;
+  height: 1.0vw;
+  border-radius: 1.0vw;
+  top: -0.5vw;
+  left: -0.5vw;
+  position: relative;
+  background-color: #B2B2B2;
+  content: '';
+  display: inline-block;
+  visibility: visible;
+  border: 0.1vw solid white;
+}
 
 
 /* New menu bar, implements drop down menu for filter.. */

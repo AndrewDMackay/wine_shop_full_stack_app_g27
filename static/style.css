@@ -4,14 +4,26 @@
 body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    /* background-color: #282828; */
     background-color: #090909;
     color: #DEDEDE; 
     align-content: center;
+    background: url('/static/images/unsplash_background_winery_medium.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
   }
   
   
   /* Home page, containers, styling, and icons.. */
+
+  .home-background {
+    position:absolute;
+    padding:0vw;
+    margin:0vw;
+    width: 98vw;
+    height: 78vw;
+    background-color: #090909;
+  }
+  
 
   #home-container {
     padding: 0.28vw;
@@ -93,7 +105,6 @@ body {
     flex-wrap: wrap;
     padding: 0.28vw;
     min-height: 48.8vw;
-    min-width: 50vww;
     border: 0.1vw solid #B2B2B2;
   }
 
@@ -103,7 +114,7 @@ body {
     width: 24.30vw;
     min-height: 48.8vw;
     padding: 0.7vw;
-    line-height: 1.2vw;
+    line-height: 1.0vw;
   }
 
  /* Styling for all content, and tex on all pages, forms, etc, etc.. */
@@ -178,7 +189,6 @@ body {
   #top-icon{
     font-size: 1.0vw;
     color: whitesmoke;
-    padding-bottom: 0.8vw;
     margin-left: 10.5vw;
   }
 

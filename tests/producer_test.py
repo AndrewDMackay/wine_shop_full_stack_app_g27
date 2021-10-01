@@ -8,7 +8,7 @@ from models.wine import Wine
 class TestProducer(unittest.TestCase):
     
     def setUp(self):
-        self.producer = Producer("producer1", "country1", "region1", "winemaker1")
+        self.producer = Producer("producer1", "country1", "region1", "winemaker1", True)
         self.wine = Wine("wine1", self.producer, 6, 5.00, 10.00)
         
     
@@ -26,5 +26,8 @@ class TestProducer(unittest.TestCase):
 
     def test_producer_has_winemaker(self):
         self.assertEqual("winemaker1", self.producer.winemaker)
+
+    def test_producer_has_winemaker(self):
+        self.assertEqual(True, self.producer.active)
 
 

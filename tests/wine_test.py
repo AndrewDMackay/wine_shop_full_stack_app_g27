@@ -8,7 +8,7 @@ from models.producer import Producer
 class TestWine(unittest.TestCase):
     
     def setUp(self):
-        self.producer = Producer("producer1", "country1", "region1", "producer_description1")
+        self.producer = Producer("producer1", "country1", "region1", "winemaker1", True)
         self.wine = Wine("wine1", "producer1", 6, 5.00, 10.00)
         
     

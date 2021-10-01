@@ -12,6 +12,24 @@ class Wine:
         self.id = id
 
 
+    # Pseudo-Code for PDA.. 
+
+    # Function to check stock levels, versus a threshold, and display feedback..
+
+    # Function, 'check stock'..
+
+    # If stock is below the set threshold..
+    # Print or return 'Stock Low..'
+
+    # If stock is equal to none..
+    # Print or return 'Out Of Stock..
+
+    # If stock is anything else..
+    # Print or return 'Stock Normal'..
+
+    # Add icons in html alongside text feedback..
+
+
     def check_stock(wine):
         if wine.stock <=5:
             return "Stock Low.."

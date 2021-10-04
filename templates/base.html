@@ -20,13 +20,61 @@
           <a href="/producers">PRODUCERS</a>
           <a href="/producers/new">NEW PRODUCER</a>
           <div class="dropdown">
-            <button class="drop-button"><strong>FILTER</strong>
+            <button class="drop-button"><strong>PRODUCER</strong>
               <i id="icon" class="fa fa-caret-down" aria-hidden="true"></i>
             </button>
               <div class="dropdown-content">
                 <i class="fa fa-caret-down"></i>
               {% for producer in all_producers %}
               <a href="/wines/filter/{{ producer.producer_name }}">{{ producer.producer_name }}</a>
+              {% endfor %}
+              </div>
+          </div>
+          <div class="dropdown">
+            <button class="drop-button"><strong>COUNTRY</strong>
+              <i id="icon" class="fa fa-caret-down" aria-hidden="true"></i>
+            </button>
+              <div class="dropdown-content">
+                <i class="fa fa-caret-down"></i>
+              {% for producer in all_producers %}
+              <a href="/wines/filter/{{ producer.producer_name }}">{{ producer.country }}</a>
+              {% endfor %}
+              </div>
+          </div>
+          <div class="dropdown">
+            <button class="drop-button"><strong>REGION</strong>
+              <i id="icon" class="fa fa-caret-down" aria-hidden="true"></i>
+            </button>
+              <div class="dropdown-content">
+                <i class="fa fa-caret-down"></i>
+              {% for producer in all_producers %}
+              <a href="/wines/filter/{{ producer.producer_name }}">{{ producer.region }}</a>
+              {% endfor %}
+              </div>
+          </div>
+          <div class="dropdown">
+            <button class="drop-button"><strong>ACTIVE</strong>
+              <i id="icon" class="fa fa-caret-down" aria-hidden="true"></i>
+            </button>
+              <div class="dropdown-content">
+                <i class="fa fa-caret-down"></i>
+              {% for producer in all_producers %}
+              {% if producer.active == true %}
+              <a href="/wines/filter/{{ producer.producer_name }}">{{ producer.producer_name }} [ Active Is {{ producer.active }} ]</a>
+              {% endif %}
+              {% endfor %}
+              </div>
+          </div>
+          <div class="dropdown">
+            <button class="drop-button"><strong>INACTIVE</strong>
+              <i id="icon" class="fa fa-caret-down" aria-hidden="true"></i>
+            </button>
+              <div class="dropdown-content">
+                <i class="fa fa-caret-down"></i>
+              {% for producer in all_producers %}
+              {% if producer.active == false %}
+              <a href="/wines/filter/{{ producer.producer_name }}">{{ producer.producer_name }} [ Active Is {{ producer.active }} ]</a>
+              {% endif %}
               {% endfor %}
               </div>
           </div>

@@ -53,6 +53,17 @@
               </div>
           </div>
           <div class="dropdown">
+            <button class="drop-button"><strong>WINEMAKER</strong>
+              <i id="icon" class="fa fa-caret-down" aria-hidden="true"></i>
+            </button>
+              <div class="dropdown-content">
+                <i class="fa fa-caret-down"></i>
+              {% for producer in all_producers %}
+              <a href="/wines/filter/{{ producer.producer_name }}">{{ producer.winemaker }}</a>
+              {% endfor %}
+              </div>
+          </div>
+          <div class="dropdown">
             <button class="drop-button"><strong>ACTIVE</strong>
               <i id="icon" class="fa fa-caret-down" aria-hidden="true"></i>
             </button>

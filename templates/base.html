@@ -76,19 +76,6 @@
               {% endfor %}
               </div>
           </div>
-          <div class="dropdown">
-            <button class="drop-button"><strong>INACTIVE</strong>
-              <i id="icon" class="fa fa-caret-down" aria-hidden="true"></i>
-            </button>
-              <div class="dropdown-content">
-                <i class="fa fa-caret-down"></i>
-              {% for producer in all_producers %}
-              {% if producer.active == false %}
-              <a href="/wines/filter/{{ producer.producer_name }}">{{ producer.producer_name }} [ Active Is {{ producer.active }} ]</a>
-              {% endif %}
-              {% endfor %}
-              </div>
-          </div>
         </div>
       </div>
     </nav>
